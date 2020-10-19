@@ -1,0 +1,749 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>UpdateLevels | OrbiterTS - v3.0.0</title>
+	<meta name="description" content="Documentation for OrbiterTS - v3.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">OrbiterTS - v3.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/net.html">net</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.html">user1</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.orbiter.html">orbiter</a>
+				</li>
+				<li>
+					<a href="net.user1.orbiter.updatelevels.html">UpdateLevels</a>
+				</li>
+			</ul>
+			<h1>Class UpdateLevels</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The UpdateLevels class specifies the amount of information a client wishes to receive from
+							the server about a room it has either joined or is observing. Room update levels are
+							intended for use with massively multiuser applications, where clients must conserve bandwidth
+						by minimizing the amount of traffic sent by the server.</p>
+					</div>
+					<p>For example, imagine a nation-wide live quiz with 10000 participants in a single room. To
+						conserve bandwidth and CPU, each participant must disable all updates about all other room
+						occupants, while receiving aggregated application updates in the form of room messages sent
+						by a server-side room module. To receive messages sent to the room by room modules only, and
+						ignore all other updates for the room, each quiz client explicitly sets reduced update levels
+					when joining the room.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">UpdateLevels</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#allroomattributes" class="tsd-kind-icon">all<wbr>Room<wbr>Attributes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#observercount" class="tsd-kind-icon">observer<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#observerlist" class="tsd-kind-icon">observer<wbr>List</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#observerloginlogoff" class="tsd-kind-icon">observer<wbr>Login<wbr>Logoff</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#occupantcount" class="tsd-kind-icon">occupant<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#occupantlist" class="tsd-kind-icon">occupant<wbr>List</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#occupantloginlogoff" class="tsd-kind-icon">occupant<wbr>Login<wbr>Logoff</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#roommessages" class="tsd-kind-icon">room<wbr>Messages</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#sharedobserverattributesglobal" class="tsd-kind-icon">shared<wbr>Observer<wbr>Attributes<wbr>Global</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#sharedobserverattributesroom" class="tsd-kind-icon">shared<wbr>Observer<wbr>Attributes<wbr>Room</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#sharedoccupantattributesglobal" class="tsd-kind-icon">shared<wbr>Occupant<wbr>Attributes<wbr>Global</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#sharedoccupantattributesroom" class="tsd-kind-icon">shared<wbr>Occupant<wbr>Attributes<wbr>Room</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#sharedroomattributes" class="tsd-kind-icon">shared<wbr>Room<wbr>Attributes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_all_room_attributes" class="tsd-kind-icon">FLAG_<wbr>ALL_<wbr>ROOM_<wbr>ATTRIBUTES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_observer_count" class="tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>COUNT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_observer_list" class="tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>LIST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_observer_login_logoff" class="tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>LOGIN_<wbr>LOGOFF</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_occupant_count" class="tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>COUNT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_occupant_list" class="tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>LIST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_occupant_login_logoff" class="tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>LOGIN_<wbr>LOGOFF</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_room_messages" class="tsd-kind-icon">FLAG_<wbr>ROOM_<wbr>MESSAGES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_shared_observer_attributes_global" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>GLOBAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_shared_observer_attributes_room" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>ROOM</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_shared_occupant_attributes_global" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>GLOBAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_shared_occupant_attributes_room" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>ROOM</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.updatelevels.html#flag_shared_room_attributes" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>ROOM_<wbr>ATTRIBUTES</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#clearall" class="tsd-kind-icon">clear<wbr>All</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#fromint" class="tsd-kind-icon">from<wbr>Int</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#restoredefaults" class="tsd-kind-icon">restore<wbr>Defaults</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.updatelevels.html#toint" class="tsd-kind-icon">to<wbr>Int</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Update<wbr>Levels<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="allroomattributes" class="tsd-anchor"></a>
+					<h3>all<wbr>Room<wbr>Attributes</h3>
+					<div class="tsd-signature tsd-kind-icon">all<wbr>Room<wbr>Attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Identical to the sharedRoomAttributes variable, but also includes non-shared
+							attributes. Requires administrator privileges; defaults to false.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="observercount" class="tsd-anchor"></a>
+					<h3>observer<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">observer<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time the number of clients observing
+							the target room changes; defaults to false.</p>
+						</div>
+						<p>Updates trigger the following events:
+						-RoomEvent.OBSERVER_COUNT (via the target room)</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="observerlist" class="tsd-anchor"></a>
+					<h3>observer<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">observer<wbr>List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time a client observes or stops
+							observing the target room; defaults to false.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>RoomEvent.ADD_OBSERVER (via the target room)</li></li>
+							<li>RoomEvent.REMOVE_OBSERVER (via the target room)</li></li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="observerloginlogoff" class="tsd-anchor"></a>
+					<h3>observer<wbr>Login<wbr>Logoff</h3>
+					<div class="tsd-signature tsd-kind-icon">observer<wbr>Login<wbr>Logoff<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time an observer
+							of the target room logs in or logs off; defaults to true.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>AccountEvent.LOGIN (via the AccountManager and the UserAccount object for the client
+							that logged in)</li>
+							<li>AccountEvent.LOGOFF (via the AccountManager and the UserAccount object for the client
+							that logged off)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="occupantcount" class="tsd-anchor"></a>
+					<h3>occupant<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">occupant<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time the number of clients in the
+							target room changes; defaults to false.</p>
+						</div>
+						<p>Updates trigger the following events:
+						-RoomEvent.OCCUPANT_COUNT (via the target room)</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="occupantlist" class="tsd-anchor"></a>
+					<h3>occupant<wbr>List</h3>
+					<div class="tsd-signature tsd-kind-icon">occupant<wbr>List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time a client joins or leaves the
+							target room; defaults to true.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>RoomEvent.ADD_OCCUPANT (via the target room)</li>
+							<li>RoomEvent.REMOVE_OCCUPANT (via the target room)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="occupantloginlogoff" class="tsd-anchor"></a>
+					<h3>occupant<wbr>Login<wbr>Logoff</h3>
+					<div class="tsd-signature tsd-kind-icon">occupant<wbr>Login<wbr>Logoff<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time an occupant
+							of the target room logs in or logs off; defaults to true.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>AccountEvent.LOGIN (via the AccountManager and the UserAccount object
+							for the client that logged in)</li>
+							<li>AccountEvent.LOGOFF (via the AccountManager and the UserAccount object
+							for the client that logged off)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="roommessages" class="tsd-anchor"></a>
+					<h3>room<wbr>Messages</h3>
+					<div class="tsd-signature tsd-kind-icon">room<wbr>Messages<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time a message is
+							sent to the target room; defaults to true.</p>
+						</div>
+						<p>Updates trigger message listeners registered via the <a href="net.user1.orbiter.room.html#addmessagelistener">Room.addMessageListener</a> method.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sharedobserverattributesglobal" class="tsd-anchor"></a>
+					<h3>shared<wbr>Observer<wbr>Attributes<wbr>Global</h3>
+					<div class="tsd-signature tsd-kind-icon">shared<wbr>Observer<wbr>Attributes<wbr>Global<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time an observer
+								of the target room sets or deletes a global shared attribute;
+							defaults to false.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>RoomEvent.UPDATE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>RoomEvent.DELETE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>AttributeEvent.DELETE (via the client that deleted the attribute)</li>
+							<li>AttributeEvent.UPDATE (via the client that set the attribute)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sharedobserverattributesroom" class="tsd-anchor"></a>
+					<h3>shared<wbr>Observer<wbr>Attributes<wbr>Room</h3>
+					<div class="tsd-signature tsd-kind-icon">shared<wbr>Observer<wbr>Attributes<wbr>Room<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time an observer
+								of the target room sets or deletes a room-scoped shared-attribute;
+							defaults to false.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>RoomEvent.UPDATE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>RoomEvent.DELETE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>AttributeEvent.DELETE (via the client that deleted the attribute)</li>
+							<li>AttributeEvent.UPDATE (via the client that set the attribute)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sharedoccupantattributesglobal" class="tsd-anchor"></a>
+					<h3>shared<wbr>Occupant<wbr>Attributes<wbr>Global</h3>
+					<div class="tsd-signature tsd-kind-icon">shared<wbr>Occupant<wbr>Attributes<wbr>Global<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time an occupant
+								of the target room sets or deletes a global shared attribute; defaults
+							to true.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>RoomEvent.UPDATE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>RoomEvent.DELETE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>AttributeEvent.DELETE (via the client that deleted the attribute)</li>
+							<li>AttributeEvent.UPDATE (via the client that set the attribute)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sharedoccupantattributesroom" class="tsd-anchor"></a>
+					<h3>shared<wbr>Occupant<wbr>Attributes<wbr>Room</h3>
+					<div class="tsd-signature tsd-kind-icon">shared<wbr>Occupant<wbr>Attributes<wbr>Room<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time an occupant
+								of the target room sets or deletes a room-scoped shared-attribute;
+							defaults to true.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>RoomEvent.UPDATE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>RoomEvent.DELETE_CLIENT_ATTRIBUTE (via the target room)</li>
+							<li>AttributeEvent.DELETE (via the client that deleted the attribute)</li>
+							<li>AttributeEvent.UPDATE (via the client that set the attribute)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sharedroomattributes" class="tsd-anchor"></a>
+					<h3>shared<wbr>Room<wbr>Attributes</h3>
+					<div class="tsd-signature tsd-kind-icon">shared<wbr>Room<wbr>Attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>When true, the current client is sent an update any time one of the target room&#39;s shared
+							attributes changes or is deleted; defaults to true.</p>
+						</div>
+						<p>Updates trigger the following events:</p>
+						<ul>
+							<li>AttributeEvent.DELETE (via the target room)</li>
+							<li>AttributeEvent.UPDATE (via the target room)</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_all_room_attributes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>ALL_<wbr>ROOM_<wbr>ATTRIBUTES</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>ALL_<wbr>ROOM_<wbr>ATTRIBUTES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 12</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_observer_count" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>OBSERVER_<wbr>COUNT</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>COUNT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 3</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_observer_list" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>OBSERVER_<wbr>LIST</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>LIST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 5</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_observer_login_logoff" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>OBSERVER_<wbr>LOGIN_<wbr>LOGOFF</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>LOGIN_<wbr>LOGOFF<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 11</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_occupant_count" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>OCCUPANT_<wbr>COUNT</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>COUNT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 2</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_occupant_list" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>OCCUPANT_<wbr>LIST</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>LIST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 4</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_occupant_login_logoff" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>OCCUPANT_<wbr>LOGIN_<wbr>LOGOFF</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>LOGIN_<wbr>LOGOFF<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 10</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_room_messages" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>ROOM_<wbr>MESSAGES</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>ROOM_<wbr>MESSAGES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> = 1</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_shared_observer_attributes_global" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>GLOBAL</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>GLOBAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 9</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_shared_observer_attributes_room" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>ROOM</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>ROOM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 7</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_shared_occupant_attributes_global" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>GLOBAL</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>GLOBAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 8</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_shared_occupant_attributes_room" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>ROOM</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>ROOM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 6</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="flag_shared_room_attributes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> FLAG_<wbr>SHARED_<wbr>ROOM_<wbr>ATTRIBUTES</h3>
+					<div class="tsd-signature tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>ROOM_<wbr>ATTRIBUTES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1 &lt;&lt; 1</span></div>
+					<aside class="tsd-sources">
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearall" class="tsd-anchor"></a>
+					<h3>clear<wbr>All</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>All<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets all update levels to false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="fromint" class="tsd-anchor"></a>
+					<h3>from<wbr>Int</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">from<wbr>Int<span class="tsd-signature-symbol">(</span>levels<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assigns the levels of this UpdateLevels object based on the supplied
+										integer, whose bits represent the desired new update levels. The fromInt()
+										method is used internally by Orbiter when receiving room update levels
+									from Union Server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>levels: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="restoredefaults" class="tsd-anchor"></a>
+					<h3>restore<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">restore<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets all update levels to their default values, as specified in the
+									documentation for each update level constant.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="toint" class="tsd-anchor"></a>
+					<h3>to<wbr>Int</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Int<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converts this UpdateLevels object to an integer whose bits represent
+										the specified update levels. The toInt() method is used internally by Orbiter
+									when sending room update levels to Union Server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/net.html">net</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.html">net.user1</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.logger.html">net.user1.logger</a>
+					</li>
+					<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.html">net.user1.orbiter</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.filters.html">net.user1.orbiter.filters</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.snapshot.html">net.user1.orbiter.snapshot</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.utils.html">net.user1.utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="net.user1.orbiter.updatelevels.html" class="tsd-kind-icon">Update<wbr>Levels</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#allroomattributes" class="tsd-kind-icon">all<wbr>Room<wbr>Attributes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#observercount" class="tsd-kind-icon">observer<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#observerlist" class="tsd-kind-icon">observer<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#observerloginlogoff" class="tsd-kind-icon">observer<wbr>Login<wbr>Logoff</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#occupantcount" class="tsd-kind-icon">occupant<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#occupantlist" class="tsd-kind-icon">occupant<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#occupantloginlogoff" class="tsd-kind-icon">occupant<wbr>Login<wbr>Logoff</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#roommessages" class="tsd-kind-icon">room<wbr>Messages</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#sharedobserverattributesglobal" class="tsd-kind-icon">shared<wbr>Observer<wbr>Attributes<wbr>Global</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#sharedobserverattributesroom" class="tsd-kind-icon">shared<wbr>Observer<wbr>Attributes<wbr>Room</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#sharedoccupantattributesglobal" class="tsd-kind-icon">shared<wbr>Occupant<wbr>Attributes<wbr>Global</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#sharedoccupantattributesroom" class="tsd-kind-icon">shared<wbr>Occupant<wbr>Attributes<wbr>Room</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#sharedroomattributes" class="tsd-kind-icon">shared<wbr>Room<wbr>Attributes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_all_room_attributes" class="tsd-kind-icon">FLAG_<wbr>ALL_<wbr>ROOM_<wbr>ATTRIBUTES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_observer_count" class="tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>COUNT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_observer_list" class="tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>LIST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_observer_login_logoff" class="tsd-kind-icon">FLAG_<wbr>OBSERVER_<wbr>LOGIN_<wbr>LOGOFF</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_occupant_count" class="tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>COUNT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_occupant_list" class="tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>LIST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_occupant_login_logoff" class="tsd-kind-icon">FLAG_<wbr>OCCUPANT_<wbr>LOGIN_<wbr>LOGOFF</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_room_messages" class="tsd-kind-icon">FLAG_<wbr>ROOM_<wbr>MESSAGES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_shared_observer_attributes_global" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>GLOBAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_shared_observer_attributes_room" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OBSERVER_<wbr>ATTRIBUTES_<wbr>ROOM</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_shared_occupant_attributes_global" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>GLOBAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_shared_occupant_attributes_room" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>OCCUPANT_<wbr>ATTRIBUTES_<wbr>ROOM</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.updatelevels.html#flag_shared_room_attributes" class="tsd-kind-icon">FLAG_<wbr>SHARED_<wbr>ROOM_<wbr>ATTRIBUTES</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#clearall" class="tsd-kind-icon">clear<wbr>All</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#fromint" class="tsd-kind-icon">from<wbr>Int</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#restoredefaults" class="tsd-kind-icon">restore<wbr>Defaults</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.updatelevels.html#toint" class="tsd-kind-icon">to<wbr>Int</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

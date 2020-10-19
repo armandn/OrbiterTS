@@ -1,0 +1,1639 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Room | OrbiterTS - v3.0.0</title>
+	<meta name="description" content="Documentation for OrbiterTS - v3.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">OrbiterTS - v3.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/net.html">net</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.html">user1</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.orbiter.html">orbiter</a>
+				</li>
+				<li>
+					<a href="net.user1.orbiter.room.html">Room</a>
+				</li>
+			</ul>
+			<h1>Class Room</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The Room class represents a Union room, which is a place for clients to engage in group
+							communication. When a client sends a message to a room, all other clients that are
+							conceptually &quot;in&quot; the room (known as the room&#39;s &quot;occupants&quot;) receive the message. For
+						example, an Orbiter client could send a message named &quot;CHAT&quot; to all occupants of a given room</p>
+					</div>
+					<p>Clients can join more than one room at a time. For example, a single client can play a game
+						in one room while chatting in another and reviewing employee salaries at a managers&#39; meeting
+					in yet another.</p>
+					<p>Clients leave rooms via <a href="net.user1.orbiter.room.html#leave">Room.leave</a> method. (The <a href="net.user1.orbiter.roommanager.html">RoomManager</a> class does not define a
+						separate leaveRoom() method because client applications can always retrieve a reference to a
+						previously joined room, and, hence, can always use Room&#39;s leave() method.) When the current
+						client joins a room, the room dispatches a RoomEvent.JOIN event. When the current client
+					leaves a room, the room dispatches a RoomEvent.LEAVE event.</p>
+					<p>By default, when the current client is in a room, and other clients join or leave that room,
+					the room dispatches the RoomEvent.ADD_OCCUPANT and RoomEvent.REMOVE_OCCUPANT events.</p>
+					<p>Clients that do not wish to be notified when other clients join or leave the room can opt-out
+					of notifications using the <a href="net.user1.orbiter.room.html#setupdatelevels">Room.setUpdateLevels</a> method.</p>
+					<p>By default, a client does not receive messages sent to rooms it is not in. However, clients
+						can spectate the activity of a room by asking to &quot;observe&quot; it via either
+						<a href="net.user1.orbiter.roommanager.html#observeroom">RoomManager.observeRoom</a> method or <a href="net.user1.orbiter.room.html#observe">Room.observe</a> method. A client observing a room is
+						given all the same updates as the room&#39;s occupants, but does not appear in the room&#39;s
+						occupant list. Observation is often used to create applications with spectation, such as
+					people watching a game of chess or fans spectating a celebrity chat.</p>
+					<p>Each specific Room instance in Orbiter is a reflection of an actual server-side Java Room
+						object in Union Server. When a client joins or observes a room, Union server automatically
+						sends that client a summary of the room&#39;s state, and subsequently pushes updates to the
+						client when the room&#39;s state changes. The amount of information pushed to each client by
+						Union Server is determined by the client&#39;s &quot;room update levels&quot; settings, which can be set
+					via the <a href="net.user1.orbiter.room.html#join">Room.join</a>, <a href="net.user1.orbiter.room.html#observe">observe</a>, and <a href="net.user1.orbiter.room.html#setupdatelevels">setUpdateLevels</a> methods.</p>
+					<p>A room can store information using room attributes, which are shareable, multiuser variables
+						that are accessible to all occupants and observers of the room. To create a room attribute or
+						assign a room attribute a new value, use the <a href="net.user1.orbiter.room.html#setattribute">Room.setAttribute</a> method. In the default
+						case, when a shared room attribute&#39;s value changes, all clients are notified via the
+						AttributeEvent.UPDATE event. However, clients that do not wish to be notified when a room
+					attribute changes can opt-out of notifications using the <a href="net.user1.orbiter.room.html#setupdatelevels">Room.setUpdateLevels</a> method.</p>
+					<p>To create a new server-side room, use the <a href="net.user1.orbiter.roommanager.html#createroom">RoomManager.createRoom</a> method. To remove a
+						server-side room use the <a href="net.user1.orbiter.roommanager.html#removeroom">RoomManager.removeRoom</a> method. When a room is removed from
+						the server, all clients are forced to leave the room. As a result, the
+					RoomEvent.LEAVE event occurs.</p>
+					<p>In Orbiter, rooms are represented by Room objects by default, but applications can specify
+						custom Room subclasses for individual rooms, and implement application logic in those
+						classes. For example, a Room subclass might represent a chat room that handles chat messages.
+						Or a Room subclass might be a game room that implements custom gameplay. To assign the class
+					for a specific room, use the <a href="net.user1.orbiter.roomclassregistry.html#setroomclass">RoomClassRegistry.setRoomClass</a> method.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">EventDispatcher</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Room</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.room.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.room.html#target" class="tsd-kind-icon">target</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.room.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#addmessagelistener" class="tsd-kind-icon">add<wbr>Message<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#addobserver" class="tsd-kind-icon">add<wbr>Observer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#clientisinroom" class="tsd-kind-icon">client<wbr>IsIn<wbr>Room</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#clientisobservingroom" class="tsd-kind-icon">client<wbr>IsObserving<wbr>Room</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#deleteattribute" class="tsd-kind-icon">delete<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.room.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getattribute" class="tsd-kind-icon">get<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getattributemanager" class="tsd-kind-icon">get<wbr>Attribute<wbr>Manager</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getattributes" class="tsd-kind-icon">get<wbr>Attributes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getclient" class="tsd-kind-icon">get<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getdefaultclientclass" class="tsd-kind-icon">get<wbr>Default<wbr>Client<wbr>Class</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.room.html#getlisteners" class="tsd-kind-icon">get<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getnumobservers" class="tsd-kind-icon">get<wbr>Num<wbr>Observers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getnumoccupants" class="tsd-kind-icon">get<wbr>Num<wbr>Occupants</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getobserverids" class="tsd-kind-icon">get<wbr>ObserverIDs</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getobservers" class="tsd-kind-icon">get<wbr>Observers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getoccupantids" class="tsd-kind-icon">get<wbr>OccupantIDs</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getoccupants" class="tsd-kind-icon">get<wbr>Occupants</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getqualifier" class="tsd-kind-icon">get<wbr>Qualifier</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getroomid" class="tsd-kind-icon">get<wbr>RoomID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getroomsettings" class="tsd-kind-icon">get<wbr>Room<wbr>Settings</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getsimpleroomid" class="tsd-kind-icon">get<wbr>Simple<wbr>RoomID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#getsyncstate" class="tsd-kind-icon">get<wbr>Sync<wbr>State</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.room.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#hasmessagelistener" class="tsd-kind-icon">has<wbr>Message<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#join" class="tsd-kind-icon">join</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#leave" class="tsd-kind-icon">leave</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#observe" class="tsd-kind-icon">observe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#remove" class="tsd-kind-icon">remove</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.room.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#removemessagelistener" class="tsd-kind-icon">remove<wbr>Message<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#sendmessage" class="tsd-kind-icon">send<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#sendmodulemessage" class="tsd-kind-icon">send<wbr>Module<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#setattribute" class="tsd-kind-icon">set<wbr>Attribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#setdefaultclientclass" class="tsd-kind-icon">set<wbr>Default<wbr>Client<wbr>Class</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#setroomsettings" class="tsd-kind-icon">set<wbr>Room<wbr>Settings</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#setupdatelevels" class="tsd-kind-icon">set<wbr>Update<wbr>Levels</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#stopobserving" class="tsd-kind-icon">stop<wbr>Observing</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.room.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Room<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, roomManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.roommanager.html" class="tsd-signature-type">RoomManager</a>, messageManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.messagemanager.html" class="tsd-signature-type">MessageManager</a>, clientManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.clientmanager.html" class="tsd-signature-type">ClientManager</a>, accountManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.accountmanager.html" class="tsd-signature-type">AccountManager</a>, log<span class="tsd-signature-symbol">?: </span><a href="net.user1.logger.logger.html" class="tsd-signature-type">Logger</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.room.html" class="tsd-signature-type">Room</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides EventDispatcher.__constructor</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>roomManager: <a href="net.user1.orbiter.roommanager.html" class="tsd-signature-type">RoomManager</a></h5>
+								</li>
+								<li>
+									<h5>messageManager: <a href="net.user1.orbiter.messagemanager.html" class="tsd-signature-type">MessageManager</a></h5>
+								</li>
+								<li>
+									<h5>clientManager: <a href="net.user1.orbiter.clientmanager.html" class="tsd-signature-type">ClientManager</a></h5>
+								</li>
+								<li>
+									<h5>accountManager: <a href="net.user1.orbiter.accountmanager.html" class="tsd-signature-type">AccountManager</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> log: <a href="net.user1.logger.logger.html" class="tsd-signature-type">Logger</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.room.html" class="tsd-signature-type">Room</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="target" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventDispatcher</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from EventDispatcher.target</p>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventlistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, priority<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.addEventListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> priority: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addmessagelistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Message<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Message<wbr>Listener<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a listener to be notified when messages of the specified type
+										are sent to the room. Room messages can be sent via <a href="net.user1.orbiter.room.html#sendmessage">Room.sendMessage</a>
+										method or RoomManager&#39;s sendMessage() method, or by a server-side module.
+										Note, however, that message listeners for a given room will not be
+										triggered on clients that have chosen to ignore messages for that room.
+									See <a href="net.user1.orbiter.room.html#setupdatelevels">setUpdateLevels</a>.</p>
+								</div>
+								<p>For a lower-level alternative to Room&#39;s addMessageListener() method, see
+									<a href="net.user1.orbiter.messagemanager.html#addmessagelistener">MessageManager.addMessageListener</a> method, which offers more listening
+								options, but also has a more complex API.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A message name, such as &quot;CHAT&quot; or &quot;PROJECTILE_FIRED&quot;. When
+											a message by this name is received, the specified listener
+										will be executed.</p>
+									</div>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The function to be executed when the specified message is
+											received. The listener&#39;s first parameter&#39;s datatype must be
+											IClient. Subsequent parameters receive the message&#39;s
+										arguments (sent via sendMessage()).</p>
+									</div>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addobserver" class="tsd-anchor"></a>
+					<h3>add<wbr>Observer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Observer<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clientisinroom" class="tsd-anchor"></a>
+					<h3>client<wbr>IsIn<wbr>Room</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">client<wbr>IsIn<wbr>Room<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the specified client is in this room, false otherwise.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clientID: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The clientID to check. Use undefined for the current client</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clientisobservingroom" class="tsd-anchor"></a>
+					<h3>client<wbr>IsObserving<wbr>Room</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">client<wbr>IsObserving<wbr>Room<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the specified client is observing this room, false otherwise.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clientID: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The clientID to check.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteattribute" class="tsd-anchor"></a>
+					<h3>delete<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Attribute<span class="tsd-signature-symbol">(</span>attrName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Deletes the specified room attribute from the server.</p>
+								</div>
+								<p>When a room attribute is deleted, the AttributeEvent.DELETE
+									event is triggered on all clients in or observing the room with
+									sufficiently verbose update levels (see UpdateLevels&#39; sharedRoomAttributes
+								and allRoomAttributes variables).</p>
+								<p>If the room attribute could not be found on the server, no update is sent
+									to any client. An attempt to delete a non-existent attribute triggers an
+									AttributeEvent.DELETE_RESULT on the client that attempted to delete the
+								attribute.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attrName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the attribute to delete. Must not contain
+										&amp;, &quot;, &#39;, &lt;, &gt;, or Tokens.RS.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="dispatchevent" class="tsd-anchor"></a>
+					<h3>dispatch<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">dispatch<wbr>Event<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.dispatchEvent</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">Event</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Permanently disables this object. The object cannot be reused. The
+										dispose() method&#39;s purpose is to put this object into a state in which
+									it can be garbage collected (for example, before a .swf file is unloaded).</p>
+								</div>
+								<p>The Room class&#39;s dispose() method is invoked automatically when
+								the <a href="net.user1.orbiter.orbiter.html#dispose">Orbiter.dispose</a> method is invoked.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getattribute" class="tsd-anchor"></a>
+					<h3>get<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Attribute<span class="tsd-signature-symbol">(</span>attrName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the current local value of the specified room attribute. The local
+										value is the most recent value that exists on the client, but depending
+										on network timing, a different value may actually exist on the server.
+										The getAttribute() method returns null for any attribute
+										that does not exist on the client and for any attribute that existed once
+									but has since been deleted.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attrName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the attribute whose value should be retrieved.
+										Must not contain &amp;, &quot;, &#39;, &lt;, &gt;, or Tokens.RS.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+							<p>The string value of the attribute, or null if the
+							attribute does not exist or has been deleted.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getattributemanager" class="tsd-anchor"></a>
+					<h3>get<wbr>Attribute<wbr>Manager</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Attribute<wbr>Manager<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AttributeManager</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AttributeManager</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getattributes" class="tsd-anchor"></a>
+					<h3>get<wbr>Attributes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Attributes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an object whose properties represent the names and values of the
+										shared attributes for this room. The object is a copy of the current
+										attributes; changes that occur after the call to getAttributes()
+									are not reflected by the object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclient" class="tsd-anchor"></a>
+					<h3>get<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Client<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><a href="net.user1.orbiter.customclient.html" class="tsd-signature-type">CustomClient</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the occupant or observer with the specified id. The returned client will be an
+										instance of either the built-in Client class, or a custom client class. For information
+										on custom client classes, see the <a href="net.user1.orbiter.client.html#setclientclass">Client.setClientClass</a> method,
+									<a href="net.user1.orbiter.room.html#setdefaultclientclass">Room.setDefaultClientClass</a> method, and <a href="net.user1.orbiter.clientmanager.html#setdefaultclientclass">ClientManager.setDefaultClientClass</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><a href="net.user1.orbiter.customclient.html" class="tsd-signature-type">CustomClient</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdefaultclientclass" class="tsd-anchor"></a>
+					<h3>get<wbr>Default<wbr>Client<wbr>Class</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>Client<wbr>Class<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the class used as the default class for clients in this room.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getlisteners" class="tsd-anchor"></a>
+					<h3>get<wbr>Listeners</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Listeners<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.getListeners</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnumobservers" class="tsd-anchor"></a>
+					<h3>get<wbr>Num<wbr>Observers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Num<wbr>Observers<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of clients known to be observing this room at the time
+										of the call. If the current client&#39;s update levels for this room do not
+										include either &quot;observer list&quot; or &quot;observer count&quot;, then the observer
+									count is unknown, and getNumObservers() returns 0.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnumoccupants" class="tsd-anchor"></a>
+					<h3>get<wbr>Num<wbr>Occupants</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Num<wbr>Occupants<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of clients known to be in this room at the time
+										of the call. If the current client&#39;s update levels for this room do not
+										include either &quot;occupant list&quot; or &quot;occupant count&quot;, then the occupant
+									count is unknown, and getNumOccupants() returns 0.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getobserverids" class="tsd-anchor"></a>
+					<h3>get<wbr>ObserverIDs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ObserverIDs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the IDs of all clients currently observing the room, as an array. The array is a
+										one-time copy of the list of clients observing the room, and is not synchronized with
+										the actual observer list (which may change as clients continue to observe and stop
+									observing the room).</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getobservers" class="tsd-anchor"></a>
+					<h3>get<wbr>Observers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Observers<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><a href="net.user1.orbiter.customclient.html" class="tsd-signature-type">CustomClient</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array of objects representing all clients currently
+										observing the room. The array is a one-time snapshot of clients observing the room,
+										and is not synchronized with the actual observer list (which may change
+									as clients continue to observe and stop observing the room).</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><a href="net.user1.orbiter.customclient.html" class="tsd-signature-type">CustomClient</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getoccupantids" class="tsd-anchor"></a>
+					<h3>get<wbr>OccupantIDs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>OccupantIDs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the IDs of all clients currently in the room, as an array. The array
+										is a one-time copy of the list of clients in the room, and is not synchronized with
+										the actual occupant list (which may change as clients continue to join and
+									leave the room).</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getoccupants" class="tsd-anchor"></a>
+					<h3>get<wbr>Occupants</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Occupants<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><a href="net.user1.orbiter.customclient.html" class="tsd-signature-type">CustomClient</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array of objects representing all clients currently
+										in the room. The array is a one-time snapshot of clients in the room,
+										and is not synchronized with the actual occupant list (which may change
+									as clients continue to join and leave the room).</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><a href="net.user1.orbiter.customclient.html" class="tsd-signature-type">CustomClient</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getqualifier" class="tsd-anchor"></a>
+					<h3>get<wbr>Qualifier</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Qualifier<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the qualifier part of this room&#39;s ID. For example, if the room&#39;s fully qualified
+									is &quot;examples.chat&quot;, this method returns &quot;examples&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getroomid" class="tsd-anchor"></a>
+					<h3>get<wbr>RoomID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>RoomID<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns this room&#39;s fully qualified ID. For example, &quot;examples.chat&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getroomsettings" class="tsd-anchor"></a>
+					<h3>get<wbr>Room<wbr>Settings</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Room<wbr>Settings<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.roomsettings.html" class="tsd-signature-type">RoomSettings</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a <a href="net.user1.orbiter.roomsettings.html">RoomSettings</a> object describing the settings for this room,
+										including the maximum number of occupants and whether the room is
+										automatically removed when the last occupant leaves. The returned object
+										is a one-time snapshot, and is not updated after the call to
+									getRoomSettings().</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.roomsettings.html" class="tsd-signature-type">RoomSettings</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getsimpleroomid" class="tsd-anchor"></a>
+					<h3>get<wbr>Simple<wbr>RoomID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Simple<wbr>RoomID<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns this room&#39;s simple ID. For example, if the room&#39;s fully qualified is
+									&quot;examples.chat&quot;, this method returns &quot;chat&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getsyncstate" class="tsd-anchor"></a>
+					<h3>get<wbr>Sync<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Sync<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a string indicating the current synchronization state
+									of this room. For details, see the SynchronizationState class.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="haslistener" class="tsd-anchor"></a>
+					<h3>has<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.hasListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="hasmessagelistener" class="tsd-anchor"></a>
+					<h3>has<wbr>Message<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Message<wbr>Listener<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a Boolean indicating whether the specified listener function
+										is currently registered to receive message notifications via this room
+									for the specified message.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The string ID of a Union message.</p>
+									</div>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A function or method.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="join" class="tsd-anchor"></a>
+					<h3>join</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">join<span class="tsd-signature-symbol">(</span>password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, updateLevels<span class="tsd-signature-symbol">?: </span><a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to place the current client in the server-side room
+										represented by this Room object. When result of the attempt is
+										received, the room triggers a RoomEvent.JOIN_RESULT event. If the attempt
+										succeeds, the room triggers a RoomEvent.JOIN event. Once the client
+										joins the room it is kept synchronized with the server-side state of
+										the room in accordance with the current client&#39;s update levels for the
+										room (see the <a href="net.user1.orbiter.room.html#setupdatelevels">Room.setUpdateLevels</a> method). Updates from the
+										server trigger individual room events, such as RoomEvent.ADD_OCCUPANT and
+									AttributeEvent.UPDATE.</p></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> password: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The optional string password used to enter the room.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> updateLevels: <a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specifies the client&#39;s update levels for the room, which dictate the
+											amount of information the client receives about the room while it is
+										in or observing the room. See the <a href="net.user1.orbiter.updatelevels.html">UpdateLevels</a> class for details.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="leave" class="tsd-anchor"></a>
+					<h3>leave</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">leave<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to remove the current client from the server-side room
+										represented by this Room object. When the result of the attempt is
+										received, the room triggers a RoomEvent.LEAVE_RESULT event. If the
+									request succeeds, the room triggers a RoomEvent.LEAVE event.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="observe" class="tsd-anchor"></a>
+					<h3>observe</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">observe<span class="tsd-signature-symbol">(</span>password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, updateLevels<span class="tsd-signature-symbol">?: </span><a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends an &quot;observe room&quot; request to the server; if successful, the current client begins
+										spectating the room&#39;s activity, and will receiving updates about the room and its
+									occupants. The observe() method is a pass-through to <a href="net.user1.orbiter.roommanager.html#observeroom">RoomManager.observeRoom</a> method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> password: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The room&#39;s password.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> updateLevels: <a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specifies the client&#39;s update levels for the room, which dictate the
+											amount of information the client receives about the room while it is
+										in or observing the room. See the <a href="net.user1.orbiter.updatelevels.html">UpdateLevels</a> class for details.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="remove" class="tsd-anchor"></a>
+					<h3>remove</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to remove this room. This method delegates its work to
+									<a href="net.user1.orbiter.roommanager.html#removeroom">RoomManager.removeRoom</a>. See that method for complete details.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> password: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="removeeventlistener" class="tsd-anchor"></a>
+					<h3>remove<wbr>Event<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.removeEventListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removemessagelistener" class="tsd-anchor"></a>
+					<h3>remove<wbr>Message<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Message<wbr>Listener<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Unregisters a message listener previously registered via addMessageListener().</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sendmessage" class="tsd-anchor"></a>
+					<h3>send<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Message<span class="tsd-signature-symbol">(</span>messageName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, includeSelf<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, filters<span class="tsd-signature-symbol">?: </span><a href="net.user1.orbiter.filters.filter.html" class="tsd-signature-type">Filter</a>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends a message to clients in and observing this room. To send a message to clients in
+										multiple rooms, use the RoomManager class&#39;s sendMessage() method. To send the message to
+									all clients on the server, use the Server class&#39;s sendMessage() method.</p>
+								</div>
+								<p>To receive the message, recipient clients normally register a message listener via the
+									Room class&#39;s addMessageListener() method. However, the message can also be received by
+									listeners registered via MessageManager&#39;s addMessageListener() method. Message listeners
+									registered via someRoom.addMessageListener() are triggered when the specified message is
+									sent to <strong>someRoom</strong> only, which is normally the desired behaviour. Message listeners
+									registered via MessageManager&#39;s addMessageListener() method are triggered when the
+									specified message is sent to <strong>any</strong> room. For a complete description of the difference
+									between MessageManager&#39;s addMessageListener() method Room&#39;s addMessageListener(), see the
+								entry for MessageManager&#39;s addMessageListener() method.</p>
+								<p>Clients that prefer not to receive messages for a room can opt-out of messages via the
+								Room class&#39;s setUpdateLevels() method.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>messageName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the message to send.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> includeSelf: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Indicates whether to send the message to the current client (i.e., the
+											client that invoked sendMessage()). Defaults to false (don&#39;t echo to
+										the sender).</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> filters: <a href="net.user1.orbiter.filters.filter.html" class="tsd-signature-type">Filter</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specifies one or more filters for the message. A filter specifies a
+											requirement that each client must meet in order to receive the
+											message. For example, a filter might indicate that only those clients
+											with the attribute &quot;team&quot; set to &quot;red&quot; should receive the message. For
+											complete details, see the Filter class. If filters is null, all
+										interested clients in the room receive the message.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sendmodulemessage" class="tsd-anchor"></a>
+					<h3>send<wbr>Module<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Module<wbr>Message<span class="tsd-signature-symbol">(</span>messageName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, messageArguments<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends the specified message to this room&#39;s server-side modules.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>messageName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the message to send.</p>
+									</div>
+								</li>
+								<li>
+									<h5>messageArguments: <span class="tsd-signature-symbol">{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message arguments, specified as dynamic instance variables on
+										a generic object.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setattribute" class="tsd-anchor"></a>
+					<h3>set<wbr>Attribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Attribute<span class="tsd-signature-symbol">(</span>attrName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, attrValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isShared<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, isPersistent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, evaluate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to set an attribute for this room. An attribute is a like a variable for
+										the room with the added benefit that it can be automatically shared with all clients in
+										the room. Room attributes are intended to store information about the room&#39;s environment,
+									such as the highscore in a game room or the position of the furniture in a virtual house.</p>
+								</div>
+								<p>If setAttribute() is called with <code>isShared</code> set to true, then by default the attribute
+									value is automatically propagated to all clients in the room. Clients can respond to the
+									changing of a shared room-attribute value via the AttributeEvent.UPDATE event. Clients
+									that do not wish to receive the attribute update can use <a href="net.user1.orbiter.room.html#setupdatelevels">setUpdateLevels</a> to opt out
+								of the notification.</p>
+								<p>When the current client sets a room attribute, it will not be able to access that
+								attribute&#39;s new value until the AttributeEvent.UPDATE occurs.</p>
+								<p>To delete a room attribute use deleteAttribute().</p>
+								<p>Room attributes can be saved to a database on the server via Union&#39;s built-in attribute-
+									persistence feature. To save a room attribute, set the isPersistent parameter of
+									setAttribute() to true. By default, Union Server includes support for persistent room
+									attributes via a light-weight built-in database called Apache Derby. Because Derby is
+									built-in to Union Server, Union&#39;s persistent room-attribute feature can be used without
+									any special configuration or additional installation. However, developers who prefer to
+									use another database or arbitrary data source can customize or fully replace Union&#39;s
+									built-in database. For information on customizing Union&#39;s persistence data source, see
+								<a href="http://www.unionplatform.com/?page_id=837">http://www.unionplatform.com/?page_id=837</a>.</p>
+								<p>Note that internally, a reserved character is used to separate attributes during
+									transmission to and from the server. The reserved character is assigned to the Tokens.RS
+									static variable, and defaults to the pipe character, &quot;|&quot;. Application code must not use
+								that character in the name or value of an attribute.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attrName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the attribute. Must not contain &amp;, &quot;, &#39;, &lt;, &gt;,
+										or Tokens.RS.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attrValue: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value of the attribute. Must be a string. Must not contain
+										Tokens.RS.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isShared: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, all interested clients in the room on which this attribute is
+											set are notified when the attribute changes. If false, the attribute
+											value is stored on the server but clients in the room are not
+										automatically notified of its existence nor of its value.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isPersistent: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, causes the attribute to be stored in a server-side
+											database. Attributes stored in the database are known as &quot;persistent
+											attributes&quot;. Persistent attributes are saved even after the server
+											shuts down. When the server restarts, if the room on which the
+											persistent attribute was stored is created again, the persistent
+											attribute is automatically loaded. If the persistent attribute is
+											also shared, then clients that join the room are automatically
+										informed of the attribute name and value.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> evaluate: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, the server will evaluate the attrValue as a mathematical
+											expression before assigning the attribute its new value. Within the
+											expression, the token &quot;%v&quot; means &quot;substitute the attribute&#39;s current
+											value&quot;. For example, the following code adds one to an existing
+											attribute &quot;visits&quot;:
+											<code>theRoom.setAttribute(&quot;visits&quot;, &quot;%v+1&quot;, true, false, true);</code>.
+											When evaluate is true, attrValue can contain the following
+										characters only: the numbers 0-9, ., *, /, +, -, %, v.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setdefaultclientclass" class="tsd-anchor"></a>
+					<h3>set<wbr>Default<wbr>Client<wbr>Class</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Default<wbr>Client<wbr>Class<span class="tsd-signature-symbol">(</span>defaultClass<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assigns a class to use as the default class for clients in this room. By default, all
+										clients are represented by instances of the Client class, which implements IClient.
+										Orbiter applications can, however, choose to represent clients with a custom class. The
+										custom client class can be specified on a per-client basis via the
+										<a href="net.user1.orbiter.client.html#setclientclass">Client.setClientClass</a> method. Or, the custom class can be specified on a per-room
+										basis via the <a href="net.user1.orbiter.room.html#setdefaultclientclass">Room.setDefaultClientClass</a> method. When a class has been specified via
+										setDefaultClientClass() for a room, it is used as the client class for any client
+										retrieved via the room&#39;s getClient() method, unless the client specifies a custom class
+										via the Client class&#39;s setClientClass() method, which overrides Room&#39;s
+									setDefaultClientClass().</p>
+								</div>
+								<p>To set the custom class for a client globally, use the
+								<a href="net.user1.orbiter.clientmanager.html#setdefaultclientclass">ClientManager.setDefaultClientClass</a>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>defaultClass: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The default client class for this room. The class is normally a
+											descendant of CustomClient, but can be any class that implements the
+										IClient interface.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setroomsettings" class="tsd-anchor"></a>
+					<h3>set<wbr>Room<wbr>Settings</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Room<wbr>Settings<span class="tsd-signature-symbol">(</span>settings<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.roomsettings.html" class="tsd-signature-type">RoomSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assigns new settings for the room. For a list of available room settings, see the
+										RoomSettings class. To change a room setting, the current client must have sufficient
+										privileges. By default, a room&#39;s creator is authorized to change room settings. To allow
+										other types of clients (such as moderators) to change room settings, define a
+									remote-client security.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>settings: <a href="net.user1.orbiter.roomsettings.html" class="tsd-signature-type">RoomSettings</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setupdatelevels" class="tsd-anchor"></a>
+					<h3>set<wbr>Update<wbr>Levels</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Update<wbr>Levels<span class="tsd-signature-symbol">(</span>updateLevels<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Specifies the amount of information the current client will receive from
+										the server about this room while in or observing this room. For details,
+									see the <a href="net.user1.orbiter.updatelevels.html">UpdateLevels</a> class.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>updateLevels: <a href="net.user1.orbiter.updatelevels.html" class="tsd-signature-type">UpdateLevels</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="stopobserving" class="tsd-anchor"></a>
+					<h3>stop<wbr>Observing</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">stop<wbr>Observing<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends a &quot;stop observing room&quot; request to the server. If successful, the current client
+									stops observing the room, and is no longer sent updates about the room&#39;s activity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/net.html">net</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.html">net.user1</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.logger.html">net.user1.logger</a>
+					</li>
+					<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.html">net.user1.orbiter</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.filters.html">net.user1.orbiter.filters</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.snapshot.html">net.user1.orbiter.snapshot</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.utils.html">net.user1.utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="net.user1.orbiter.room.html" class="tsd-kind-icon">Room</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.room.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.room.html#target" class="tsd-kind-icon">target</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.room.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#addmessagelistener" class="tsd-kind-icon">add<wbr>Message<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#addobserver" class="tsd-kind-icon">add<wbr>Observer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#clientisinroom" class="tsd-kind-icon">client<wbr>IsIn<wbr>Room</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#clientisobservingroom" class="tsd-kind-icon">client<wbr>IsObserving<wbr>Room</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#deleteattribute" class="tsd-kind-icon">delete<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.room.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getattribute" class="tsd-kind-icon">get<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getattributemanager" class="tsd-kind-icon">get<wbr>Attribute<wbr>Manager</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getattributes" class="tsd-kind-icon">get<wbr>Attributes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getclient" class="tsd-kind-icon">get<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getdefaultclientclass" class="tsd-kind-icon">get<wbr>Default<wbr>Client<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.room.html#getlisteners" class="tsd-kind-icon">get<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getnumobservers" class="tsd-kind-icon">get<wbr>Num<wbr>Observers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getnumoccupants" class="tsd-kind-icon">get<wbr>Num<wbr>Occupants</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getobserverids" class="tsd-kind-icon">get<wbr>ObserverIDs</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getobservers" class="tsd-kind-icon">get<wbr>Observers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getoccupantids" class="tsd-kind-icon">get<wbr>OccupantIDs</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getoccupants" class="tsd-kind-icon">get<wbr>Occupants</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getqualifier" class="tsd-kind-icon">get<wbr>Qualifier</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getroomid" class="tsd-kind-icon">get<wbr>RoomID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getroomsettings" class="tsd-kind-icon">get<wbr>Room<wbr>Settings</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getsimpleroomid" class="tsd-kind-icon">get<wbr>Simple<wbr>RoomID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#getsyncstate" class="tsd-kind-icon">get<wbr>Sync<wbr>State</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.room.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#hasmessagelistener" class="tsd-kind-icon">has<wbr>Message<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#join" class="tsd-kind-icon">join</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#leave" class="tsd-kind-icon">leave</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#observe" class="tsd-kind-icon">observe</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#remove" class="tsd-kind-icon">remove</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.room.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#removemessagelistener" class="tsd-kind-icon">remove<wbr>Message<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#sendmessage" class="tsd-kind-icon">send<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#sendmodulemessage" class="tsd-kind-icon">send<wbr>Module<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#setattribute" class="tsd-kind-icon">set<wbr>Attribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#setdefaultclientclass" class="tsd-kind-icon">set<wbr>Default<wbr>Client<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#setroomsettings" class="tsd-kind-icon">set<wbr>Room<wbr>Settings</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#setupdatelevels" class="tsd-kind-icon">set<wbr>Update<wbr>Levels</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#stopobserving" class="tsd-kind-icon">stop<wbr>Observing</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.room.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

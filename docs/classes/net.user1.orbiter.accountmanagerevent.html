@@ -1,0 +1,486 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AccountManagerEvent | OrbiterTS - v3.0.0</title>
+	<meta name="description" content="Documentation for OrbiterTS - v3.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">OrbiterTS - v3.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/net.html">net</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.html">user1</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.orbiter.html">orbiter</a>
+				</li>
+				<li>
+					<a href="net.user1.orbiter.accountmanagerevent.html">AccountManagerEvent</a>
+				</li>
+			</ul>
+			<h1>Class AccountManagerEvent</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>AccountManagerEvent is a simple data class used to pass information from the <a href="net.user1.orbiter.accountmanager.html">AccountManager</a>
+							to registered event-listeners when an account management event occurs. The
+							AccountManagerEvent class also defines constants representing the available account
+						management events.</p>
+					</div>
+					<p>To register for an account management event, use <a href="net.user1.orbiter.accountmanager.html#addeventlistener">AccountManager.addEventListener</a> method.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">Event</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">AccountManagerEvent</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.accountmanagerevent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.accountmanagerevent.html#target" class="tsd-kind-icon">target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.accountmanagerevent.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#account_added" class="tsd-kind-icon">ACCOUNT_<wbr>ADDED</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#account_removed" class="tsd-kind-icon">ACCOUNT_<wbr>REMOVED</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#create_account_result" class="tsd-kind-icon">CREATE_<wbr>ACCOUNT_<wbr>RESULT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#remove_account_result" class="tsd-kind-icon">REMOVE_<wbr>ACCOUNT_<wbr>RESULT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#stop_watching_for_accounts_result" class="tsd-kind-icon">STOP_<wbr>WATCHING_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#synchronize" class="tsd-kind-icon">SYNCHRONIZE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.accountmanagerevent.html#watch_for_accounts_result" class="tsd-kind-icon">WATCH_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.accountmanagerevent.html#getaccount" class="tsd-kind-icon">get<wbr>Account</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.accountmanagerevent.html#getstatus" class="tsd-kind-icon">get<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.accountmanagerevent.html#getuserid" class="tsd-kind-icon">get<wbr>UserID</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Account<wbr>Manager<wbr>Event<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, userID<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, account<span class="tsd-signature-symbol">?: </span><a href="net.user1.orbiter.useraccount.html" class="tsd-signature-type">UserAccount</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, status<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.accountmanagerevent.html" class="tsd-signature-type">AccountManagerEvent</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides Event.__constructor</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> userID: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> account: <a href="net.user1.orbiter.useraccount.html" class="tsd-signature-type">UserAccount</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> status: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> = null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.accountmanagerevent.html" class="tsd-signature-type">AccountManagerEvent</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="target" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventDispatcher</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Event.target</p>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from Event.type</p>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="account_added" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> ACCOUNT_<wbr>ADDED</h3>
+					<div class="tsd-signature tsd-kind-icon">ACCOUNT_<wbr>ADDED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"ACCOUNT_ADDED"</span><span class="tsd-signature-symbol"> = &quot;ACCOUNT_ADDED&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the AccountManager is informed by Union Server that a user account was
+								created. This event is available when the AccountManager is watching for user accounts
+							only (see <a href="net.user1.orbiter.accountmanager.html#watchforaccounts">AccountManager.watchForAccounts</a>).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="account_removed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> ACCOUNT_<wbr>REMOVED</h3>
+					<div class="tsd-signature tsd-kind-icon">ACCOUNT_<wbr>REMOVED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"ACCOUNT_REMOVED"</span><span class="tsd-signature-symbol"> = &quot;ACCOUNT_REMOVED&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the AccountManager is informed by Union Server that a user account was
+								deleted. This event is available when the AccountManager is watching for user accounts
+							only (see <a href="net.user1.orbiter.accountmanager.html#watchforaccounts">AccountManager.watchForAccounts</a>).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="create_account_result" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> CREATE_<wbr>ACCOUNT_<wbr>RESULT</h3>
+					<div class="tsd-signature tsd-kind-icon">CREATE_<wbr>ACCOUNT_<wbr>RESULT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"CREATE_ACCOUNT_RESULT"</span><span class="tsd-signature-symbol"> = &quot;CREATE_ACCOUNT_RESULT&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the result of an earlier call to <a href="net.user1.orbiter.accountmanager.html#createaccount">AccountManager.createAccount</a>
+								method is received. To determine the result of the account-creation request, use
+							getStatus(), which has the following possible return values:</p>
+							<ul>
+								<li>Status.SUCCESS</li>
+								<li>Status.ERROR</li>
+								<li>Status.ACCOUNT_EXISTS</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="remove_account_result" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> REMOVE_<wbr>ACCOUNT_<wbr>RESULT</h3>
+					<div class="tsd-signature tsd-kind-icon">REMOVE_<wbr>ACCOUNT_<wbr>RESULT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"REMOVE_ACCOUNT_RESULT"</span><span class="tsd-signature-symbol"> = &quot;REMOVE_ACCOUNT_RESULT&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the result of an earlier call to <a href="net.user1.orbiter.accountmanager.html#removeaccount">AccountManager.removeAccount</a> method
+								is received. To determine the result of the account-removal request, use getStatus(),
+							which has the following possible return values:</p>
+							<ul>
+								<li>Status.SUCCESS</li>
+								<li>Status.ERROR</li>
+								<li>Status.ACCOUNT_NOT_FOUND</li>
+								<li>Status.AUTHORIZATION_FAILED</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="stop_watching_for_accounts_result" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> STOP_<wbr>WATCHING_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT</h3>
+					<div class="tsd-signature tsd-kind-icon">STOP_<wbr>WATCHING_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"STOP_WATCHING_FOR_ACCOUNTS_RESULT"</span><span class="tsd-signature-symbol"> = &quot;STOP_WATCHING_FOR_ACCOUNTS_RESULT&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the AccountManager receives the result of an earlier
+								stopWatchingForAccounts() request. To determine the result of the attempt, use
+							getStatus(), which has the following possible return values:</p>
+							<ul>
+								<li>Status.SUCCESS</li>
+								<li>Status.ERROR</li>
+								<li>Status.NOT_WATCHING</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="synchronize" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> SYNCHRONIZE</h3>
+					<div class="tsd-signature tsd-kind-icon">SYNCHRONIZE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"SYNCHRONIZE"</span><span class="tsd-signature-symbol"> = &quot;SYNCHRONIZE&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the AccountManager&#39;s list of user accounts has finished
+							synchronization after a watchForAccounts() request.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="watch_for_accounts_result" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> WATCH_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT</h3>
+					<div class="tsd-signature tsd-kind-icon">WATCH_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"WATCH_FOR_ACCOUNTS_RESULT"</span><span class="tsd-signature-symbol"> = &quot;WATCH_FOR_ACCOUNTS_RESULT&quot;</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Dispatched when the AccountManager receives the result of an earlier watchForAccounts()
+								request. To determine the result of the request, use getStatus(), which has the
+							following possible return values:</p>
+							<ul>
+								<li>Status.SUCCESS</li>
+								<li>Status.ERROR</li>
+								<li>Status.ALREADY_WATCHING</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getaccount" class="tsd-anchor"></a>
+					<h3>get<wbr>Account</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Account<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.useraccount.html" class="tsd-signature-type">UserAccount</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the UserAccount object pertaining to this account manager event. For example,
+										for an <a href="net.user1.orbiter.accountmanagerevent.html#account_removed">AccountManagerEvent.ACCOUNT_REMOVED</a> event, getAccount() returns the UserAccount
+									object for the removed account.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.useraccount.html" class="tsd-signature-type">UserAccount</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getstatus" class="tsd-anchor"></a>
+					<h3>get<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the status of the operation to which this event pertains. The getStatus()
+										method&#39;s return value is always one of the Status class&#39;s constants. For example, if the
+										<a href="net.user1.orbiter.accountmanagerevent.html#create_account_result">AccountManagerEvent.CREATE_ACCOUNT_RESULT</a> event occurs in response to a successful
+									account-creation attempt, getStatus() will return the value of <a href="../enums/net.user1.orbiter.status.html#success">Status.SUCCESS</a>.</p>
+								</div>
+								<p>To respond to a status, compare the return of getStatus() to one of the Status
+								constants.</p>
+								<pre><code>    <span class="hljs-selector-tag">if</span> (e.getStatus() == Status.SUCCESS) {
+        <span class="hljs-selector-tag">showAccountCreatedScreen</span>();
+    }</code></pre>
+								<p>For a list of specific status values that can be returned during a particular event,
+								see the documentation for that event.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getuserid" class="tsd-anchor"></a>
+					<h3>get<wbr>UserID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>UserID<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the user ID of the account to which this event pertains. For example, for the
+										<a href="net.user1.orbiter.accountmanagerevent.html#account_added">AccountManagerEvent.ACCOUNT_ADDED</a> event, getUserID() returns the userID of the account
+									that was added to the server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/net.html">net</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.html">net.user1</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.logger.html">net.user1.logger</a>
+					</li>
+					<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.html">net.user1.orbiter</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.filters.html">net.user1.orbiter.filters</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.snapshot.html">net.user1.orbiter.snapshot</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.utils.html">net.user1.utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="net.user1.orbiter.accountmanagerevent.html" class="tsd-kind-icon">Account<wbr>Manager<wbr>Event</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.accountmanagerevent.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.accountmanagerevent.html#target" class="tsd-kind-icon">target</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.accountmanagerevent.html#type" class="tsd-kind-icon">type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#account_added" class="tsd-kind-icon">ACCOUNT_<wbr>ADDED</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#account_removed" class="tsd-kind-icon">ACCOUNT_<wbr>REMOVED</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#create_account_result" class="tsd-kind-icon">CREATE_<wbr>ACCOUNT_<wbr>RESULT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#remove_account_result" class="tsd-kind-icon">REMOVE_<wbr>ACCOUNT_<wbr>RESULT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#stop_watching_for_accounts_result" class="tsd-kind-icon">STOP_<wbr>WATCHING_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#synchronize" class="tsd-kind-icon">SYNCHRONIZE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.accountmanagerevent.html#watch_for_accounts_result" class="tsd-kind-icon">WATCH_<wbr>FOR_<wbr>ACCOUNTS_<wbr>RESULT</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.accountmanagerevent.html#getaccount" class="tsd-kind-icon">get<wbr>Account</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.accountmanagerevent.html#getstatus" class="tsd-kind-icon">get<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.accountmanagerevent.html#getuserid" class="tsd-kind-icon">get<wbr>UserID</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

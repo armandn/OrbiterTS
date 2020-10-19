@@ -1,0 +1,1387 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HTTPDirectConnection | OrbiterTS - v3.0.0</title>
+	<meta name="description" content="Documentation for OrbiterTS - v3.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">OrbiterTS - v3.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/net.html">net</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.html">user1</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.orbiter.html">orbiter</a>
+				</li>
+				<li>
+					<a href="net.user1.orbiter.httpdirectconnection.html">HTTPDirectConnection</a>
+				</li>
+			</ul>
+			<h1>Class HTTPDirectConnection</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The HTTPDirectConnection class is used to communicate with Union Server over HTTP; it uses
+							CORS to bypass cross-origin restrictions when Union Server is hosted on a domain that does
+							not match the domain at which the Orbiter client is hosted. Normally, developers need not use
+							the HTTPDirectConnection class directly, and should instead make connections via the Orbiter
+							class&#39;s connect() method. However, the HTTPDirectConnection class is required for
+							fine-grained connection configuration, such as defining failover connections for multiple
+						Union Servers running at different host addresses.</p>
+					</div>
+					<p>By default, Orbiter uses the WebSocketConnection class, not the HTTPDirectConnection class,
+						to communicate with Union Server. The HTTPDirectConnection class is used as a backup
+						connection when the primary WebSocketConnection connection is blocked by a firewall.
+						However, on a very heavily loaded server with limited persistent socket connections
+						available, communicating with Union Server over HTTP--which uses short-lived socket
+						connections--can improve performance at the expense of realtime responsiveness. To reduce
+						server load when communicating over HTTP, use HTTPDirectConnection&#39;s setSendDelay() method to
+						decrease the frequency of Orbiter&#39;s requests for updates from Union Server. Developers that
+						wish to use HTTP connections as the primary form of communication with Union Server must do
+						so by manually configuring connections via the ConnectionManager class&#39;s addConnection()
+					method.</p>
+					<p>In environments that do not support CORS (such as IE8 on Windows), Orbiter conducts HTTP
+					communications using HTTPIFrameConnection instead of HTTPDirectConnection.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="net.user1.orbiter.httpconnection.html" class="tsd-signature-type">HTTPConnection</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">HTTPDirectConnection</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="net.user1.orbiter.securehttpdirectconnection.html" class="tsd-signature-type">SecureHTTPDirectConnection</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/net.user1.orbiter.iconnection.html" class="tsd-signature-type">IConnection</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#target" class="tsd-kind-icon">target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#default_send_delay" class="tsd-kind-icon">DEFAULT_<wbr>SEND_<wbr>DELAY</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#disconnect" class="tsd-kind-icon">disconnect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#dodispose" class="tsd-kind-icon">do<wbr>Dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#dorequestdeactivation" class="tsd-kind-icon">do<wbr>Request<wbr>Deactivation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#doretryhello" class="tsd-kind-icon">do<wbr>Retry<wbr>Hello</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#doretryincoming" class="tsd-kind-icon">do<wbr>Retry<wbr>Incoming</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#doretryoutgoing" class="tsd-kind-icon">do<wbr>Retry<wbr>Outgoing</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#dosendhello" class="tsd-kind-icon">do<wbr>Send<wbr>Hello</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#dosendincoming" class="tsd-kind-icon">do<wbr>Send<wbr>Incoming</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#dosendoutgoing" class="tsd-kind-icon">do<wbr>Send<wbr>Outgoing</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#gethost" class="tsd-kind-icon">get<wbr>Host</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#getlisteners" class="tsd-kind-icon">get<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#getport" class="tsd-kind-icon">get<wbr>Port</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#getrequestedhost" class="tsd-kind-icon">get<wbr>Requested<wbr>Host</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#getsenddelay" class="tsd-kind-icon">get<wbr>Send<wbr>Delay</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#gettype" class="tsd-kind-icon">get<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#hellocompletelistener" class="tsd-kind-icon">hello<wbr>Complete<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#helloerrorlistener" class="tsd-kind-icon">hello<wbr>Error<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#incomingcompletelistener" class="tsd-kind-icon">incoming<wbr>Complete<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#incomingerrorlistener" class="tsd-kind-icon">incoming<wbr>Error<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#isready" class="tsd-kind-icon">is<wbr>Ready</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#outgoingcompletelistener" class="tsd-kind-icon">outgoing<wbr>Complete<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#outgoingerrorlistener" class="tsd-kind-icon">outgoing<wbr>Error<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.httpdirectconnection.html#retryincoming" class="tsd-kind-icon">retry<wbr>Incoming</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#send" class="tsd-kind-icon">send</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#setorbiter" class="tsd-kind-icon">set<wbr>Orbiter</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#setretrydelay" class="tsd-kind-icon">set<wbr>Retry<wbr>Delay</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#setsenddelay" class="tsd-kind-icon">set<wbr>Send<wbr>Delay</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#setserver" class="tsd-kind-icon">set<wbr>Server</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.httpdirectconnection.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="net.user1.orbiter.httpdirectconnection.html#transmithellomessage" class="tsd-kind-icon">transmit<wbr>Hello<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#hellorequesterrorlistener" class="tsd-kind-icon">hello<wbr>Request<wbr>Error<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#hellorequestreadystatechangelistener" class="tsd-kind-icon">hello<wbr>Request<wbr>Readystatechange<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#incomingrequesterrorlistener" class="tsd-kind-icon">incoming<wbr>Request<wbr>Error<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#incomingrequestreadystatechangelistener" class="tsd-kind-icon">incoming<wbr>Request<wbr>Readystatechange<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#outgoingrequesterrorlistener" class="tsd-kind-icon">outgoing<wbr>Request<wbr>Error<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.httpdirectconnection.html#outgoingrequestreadystatechangelistener" class="tsd-kind-icon">outgoing<wbr>Request<wbr>Readystatechange<wbr>Listener</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new HTTPDirect<wbr>Connection<span class="tsd-signature-symbol">(</span>host<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, port<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#constructor">constructor</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> host: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> port: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ConnectionType.HTTP</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="target" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventDispatcher</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from EventDispatcher.target</p>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="default_send_delay" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> DEFAULT_<wbr>SEND_<wbr>DELAY</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>SEND_<wbr>DELAY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">300</span><span class="tsd-signature-symbol"> = 300</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#default_send_delay">DEFAULT_SEND_DELAY</a></p>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The default send-delay used for new HTTPConnection objects. For details, see
+							<a href="net.user1.orbiter.httpdirectconnection.html#setsenddelay">setSendDelay</a>.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventlistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, priority<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.addEventListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> priority: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="connect" class="tsd-anchor"></a>
+					<h3>connect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">connect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#connect">connect</a></p>
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#connect">connect</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="disconnect" class="tsd-anchor"></a>
+					<h3>disconnect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">disconnect<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#disconnect">disconnect</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#disconnect">disconnect</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Closes the connection to Union Server.</p>
+								</div>
+								<p>The disconnect() method is not normally intended for direct use.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="dispatchevent" class="tsd-anchor"></a>
+					<h3>dispatch<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">dispatch<wbr>Event<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.dispatchEvent</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">Event</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#dispose">dispose</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#dispose">dispose</a></p>
+								<p>Overrides <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#dispose">dispose</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Permanently disables this object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dodispose" class="tsd-anchor"></a>
+					<h3>do<wbr>Dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#dodispose">doDispose</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dorequestdeactivation" class="tsd-anchor"></a>
+					<h3>do<wbr>Request<wbr>Deactivation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Request<wbr>Deactivation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#dorequestdeactivation">doRequestDeactivation</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="doretryhello" class="tsd-anchor"></a>
+					<h3>do<wbr>Retry<wbr>Hello</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Retry<wbr>Hello<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#doretryhello">doRetryHello</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="doretryincoming" class="tsd-anchor"></a>
+					<h3>do<wbr>Retry<wbr>Incoming</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Retry<wbr>Incoming<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#doretryincoming">doRetryIncoming</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="doretryoutgoing" class="tsd-anchor"></a>
+					<h3>do<wbr>Retry<wbr>Outgoing</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Retry<wbr>Outgoing<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#doretryoutgoing">doRetryOutgoing</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dosendhello" class="tsd-anchor"></a>
+					<h3>do<wbr>Send<wbr>Hello</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Send<wbr>Hello<span class="tsd-signature-symbol">(</span>helloString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#dosendhello">doSendHello</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>helloString: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dosendincoming" class="tsd-anchor"></a>
+					<h3>do<wbr>Send<wbr>Incoming</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Send<wbr>Incoming<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#dosendincoming">doSendIncoming</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="dosendoutgoing" class="tsd-anchor"></a>
+					<h3>do<wbr>Send<wbr>Outgoing</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">do<wbr>Send<wbr>Outgoing<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#dosendoutgoing">doSendOutgoing</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="gethost" class="tsd-anchor"></a>
+					<h3>get<wbr>Host</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Host<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#gethost">getHost</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#gethost">getHost</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the host on which the connection will be opened or has been opened.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+							<p>The host name or ip, as a string.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getlisteners" class="tsd-anchor"></a>
+					<h3>get<wbr>Listeners</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Listeners<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.getListeners</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getport" class="tsd-anchor"></a>
+					<h3>get<wbr>Port</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Port<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#getport">getPort</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#getport">getPort</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the port on which the connection will be opened or has been opened.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+							<p>A number from 1 to 65535.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getrequestedhost" class="tsd-anchor"></a>
+					<h3>get<wbr>Requested<wbr>Host</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Requested<wbr>Host<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#getrequestedhost">getRequestedHost</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#getrequestedhost">getRequestedHost</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the host that was requested for this connection via setServer(). If that host is
+										a load balancing DNS server, the actual host used for the connection (as returned by
+									getHost()) might differ from the requested host.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+							<p>The requested host name or ip, as a string.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getsenddelay" class="tsd-anchor"></a>
+					<h3>get<wbr>Send<wbr>Delay</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Send<wbr>Delay<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#getsenddelay">getSendDelay</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns this connection&#39;s send-delay. For details, see setSendDelay().</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="gettype" class="tsd-anchor"></a>
+					<h3>get<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#gettype">getType</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#gettype">getType</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the type of the connection, as one of the types specified by the ConnectionType
+									class.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+							<p>A string representing the connection type.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="haslistener" class="tsd-anchor"></a>
+					<h3>has<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.hasListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="hellocompletelistener" class="tsd-anchor"></a>
+					<h3>hello<wbr>Complete<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">hello<wbr>Complete<wbr>Listener<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#hellocompletelistener">helloCompleteListener</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="helloerrorlistener" class="tsd-anchor"></a>
+					<h3>hello<wbr>Error<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">hello<wbr>Error<wbr>Listener<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#helloerrorlistener">helloErrorListener</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="incomingcompletelistener" class="tsd-anchor"></a>
+					<h3>incoming<wbr>Complete<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">incoming<wbr>Complete<wbr>Listener<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#incomingcompletelistener">incomingCompleteListener</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="incomingerrorlistener" class="tsd-anchor"></a>
+					<h3>incoming<wbr>Error<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">incoming<wbr>Error<wbr>Listener<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#incomingerrorlistener">incomingErrorListener</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isready" class="tsd-anchor"></a>
+					<h3>is<wbr>Ready</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Ready<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#isready">isReady</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#isready">isReady</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates whether this connection is currently in a &quot;ready&quot; state.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isvalid" class="tsd-anchor"></a>
+					<h3>is<wbr>Valid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Valid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#isvalid">isValid</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#isvalid">isValid</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates whether this connection is considered valid. Valid connections are those that
+										are currently in a &quot;ready&quot; state, or are currently disconnected but successfully achieved
+									a &quot;ready&quot; state in the most recent connection attempt.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="outgoingcompletelistener" class="tsd-anchor"></a>
+					<h3>outgoing<wbr>Complete<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">outgoing<wbr>Complete<wbr>Listener<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#outgoingcompletelistener">outgoingCompleteListener</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="outgoingerrorlistener" class="tsd-anchor"></a>
+					<h3>outgoing<wbr>Error<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">outgoing<wbr>Error<wbr>Listener<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#outgoingerrorlistener">outgoingErrorListener</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="removeeventlistener" class="tsd-anchor"></a>
+					<h3>remove<wbr>Event<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.removeEventListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="retryincoming" class="tsd-anchor"></a>
+					<h3>retry<wbr>Incoming</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">retry<wbr>Incoming<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="send" class="tsd-anchor"></a>
+					<h3>send</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#send">send</a></p>
+								<p>Overrides <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#send">send</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setorbiter" class="tsd-anchor"></a>
+					<h3>set<wbr>Orbiter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Orbiter<span class="tsd-signature-symbol">(</span>orbiter<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.orbiter.html" class="tsd-signature-type">Orbiter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#setorbiter">setOrbiter</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#setorbiter">setOrbiter</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assigns the Orbiter object for which this IConnection will provide server communication
+										services. This method is invoked automatically by the ConnectionManager when the
+									Connection object is added to the ConnectionManager&#39;s connection list.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>orbiter: <a href="net.user1.orbiter.orbiter.html" class="tsd-signature-type">Orbiter</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setretrydelay" class="tsd-anchor"></a>
+					<h3>set<wbr>Retry<wbr>Delay</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Retry<wbr>Delay<span class="tsd-signature-symbol">(</span>milliseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#setretrydelay">setRetryDelay</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>milliseconds: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setsenddelay" class="tsd-anchor"></a>
+					<h3>set<wbr>Send<wbr>Delay</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Send<wbr>Delay<span class="tsd-signature-symbol">(</span>milliseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#setsenddelay">setSendDelay</a></p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Increases or decreases the connection&#39;s batch-message send rate, or disables
+										batch-sending entirely. Orbiter&#39;s HTTPConnection class uses a batch-message-sending
+										system that reduces server load and client-side HTTP-request volume. In the default
+										configuration, when an HTTPConnection sends messages via an HTTP request to Union Server,
+										it starts a countdown known as the &quot;send-countdown&quot;. The duration of the send-countdown
+										is known as the &quot;send-delay&quot; (configurable via the setSendDelay() method). Until both the
+										send-countdown expires and the response to the HTTP request is received, all outbound
+										messages are queued. The queue is flushed when both the outbound HTTP request has
+									completed and the send-countdown (if any) has expired.</p>
+								</div>
+								<p>Orbiter&#39;s batch-message-sending system is part of Union&#39;s &quot;binary request&quot; HTTP
+									communications model, which balances two principles: on one hand, for maximum
+									responsiveness, Orbiter always maintains an open HTTP request to Union Server (used to
+									receive incoming messages from the server); on the other hand, for maximum efficiency,
+									when an outgoing HTTP response is already pending, Orbiter never sends another request,
+									and when no outgoing HTTP response is pending, Orbiter never sends messages to Union
+								Server more frequently than the specified send-delay.</p>
+								<p>The default send-delay is defined by <a href="net.user1.orbiter.httpconnection.html#default_send_delay">HTTPConnection.DEFAULT_SEND_DELAY</a>, and is
+									appropriate for the vast majority of applications. However, applications that require a
+									reduced server load can opt for less frequent message delivery by increasing the
+									send-delay. Conversely, applications that require maximum responsiveness can opt for more
+									frequent message delivery by decreasing the send-delay, or by setting the send-delay to
+									-1, which disables the message queue entirely. When the message queue is disabled, a new
+									outgoing HTTP request will be opened any time there are messages to send and there is no
+								outgoing request already pending.</p>
+								<p><strong>Warning</strong>: disabling the send-delay or setting it to a value lower than 200
+									milliseconds can result high server load. When setting send-delay to a custom value, be
+								sure to test application behaviour thoroughly.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>milliseconds: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The batched message send-delay, in milliseconds. Defaults to
+										<a href="net.user1.orbiter.httpconnection.html#default_send_delay">HTTPConnection.DEFAULT_SEND_DELAY</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="setserver" class="tsd-anchor"></a>
+					<h3>set<wbr>Server</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Server<span class="tsd-signature-symbol">(</span>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, port<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#setserver">setServer</a></p>
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#setserver">setServer</a></p>
+								<p>Overrides <a href="net.user1.orbiter.connection.html">Connection</a>.<a href="net.user1.orbiter.connection.html#setserver">setServer</a></p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>host: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>port: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/net.user1.orbiter.iconnection.html">IConnection</a>.<a href="../interfaces/net.user1.orbiter.iconnection.html#tostring">toString</a></p>
+								<p>Overrides <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#tostring">toString</a></p>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="transmithellomessage" class="tsd-anchor"></a>
+					<h3>transmit<wbr>Hello<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">transmit<wbr>Hello<wbr>Message<span class="tsd-signature-symbol">(</span>helloString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="net.user1.orbiter.httpconnection.html">HTTPConnection</a>.<a href="net.user1.orbiter.httpconnection.html#transmithellomessage">transmitHelloMessage</a></p>
+								<p>Overrides Connection.transmitHelloMessage</p>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transmits the client hello to the server, bypassing the usual <a href="net.user1.orbiter.httpdirectconnection.html#send">send</a> call because the
+										first request has no session id, so the Binary Request Communication Model cannot yet be
+									used.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>helloString: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="hellorequesterrorlistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> hello<wbr>Request<wbr>Error<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">hello<wbr>Request<wbr>Error<wbr>Listener<span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span>, connection<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
+								</li>
+								<li>
+									<h5>connection: <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="hellorequestreadystatechangelistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> hello<wbr>Request<wbr>Readystatechange<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">hello<wbr>Request<wbr>Readystatechange<wbr>Listener<span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span>, connection<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
+								</li>
+								<li>
+									<h5>connection: <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="incomingrequesterrorlistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> incoming<wbr>Request<wbr>Error<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">incoming<wbr>Request<wbr>Error<wbr>Listener<span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span>, connection<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
+								</li>
+								<li>
+									<h5>connection: <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="incomingrequestreadystatechangelistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> incoming<wbr>Request<wbr>Readystatechange<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">incoming<wbr>Request<wbr>Readystatechange<wbr>Listener<span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span>, connection<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
+								</li>
+								<li>
+									<h5>connection: <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="outgoingrequesterrorlistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> outgoing<wbr>Request<wbr>Error<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">outgoing<wbr>Request<wbr>Error<wbr>Listener<span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span>, connection<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
+								</li>
+								<li>
+									<h5>connection: <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="outgoingrequestreadystatechangelistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> outgoing<wbr>Request<wbr>Readystatechange<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">outgoing<wbr>Request<wbr>Readystatechange<wbr>Listener<span class="tsd-signature-symbol">(</span>xhr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">XMLHttpRequest</span>, connection<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>xhr: <span class="tsd-signature-type">XMLHttpRequest</span></h5>
+								</li>
+								<li>
+									<h5>connection: <a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-signature-type">HTTPDirectConnection</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/net.html">net</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.html">net.user1</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.logger.html">net.user1.logger</a>
+					</li>
+					<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.html">net.user1.orbiter</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.filters.html">net.user1.orbiter.filters</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.snapshot.html">net.user1.orbiter.snapshot</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.utils.html">net.user1.utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="net.user1.orbiter.httpdirectconnection.html" class="tsd-kind-icon">HTTPDirect<wbr>Connection</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#target" class="tsd-kind-icon">target</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#default_send_delay" class="tsd-kind-icon">DEFAULT_<wbr>SEND_<wbr>DELAY</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#connect" class="tsd-kind-icon">connect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#disconnect" class="tsd-kind-icon">disconnect</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dodispose" class="tsd-kind-icon">do<wbr>Dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dorequestdeactivation" class="tsd-kind-icon">do<wbr>Request<wbr>Deactivation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#doretryhello" class="tsd-kind-icon">do<wbr>Retry<wbr>Hello</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#doretryincoming" class="tsd-kind-icon">do<wbr>Retry<wbr>Incoming</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#doretryoutgoing" class="tsd-kind-icon">do<wbr>Retry<wbr>Outgoing</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dosendhello" class="tsd-kind-icon">do<wbr>Send<wbr>Hello</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dosendincoming" class="tsd-kind-icon">do<wbr>Send<wbr>Incoming</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#dosendoutgoing" class="tsd-kind-icon">do<wbr>Send<wbr>Outgoing</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#gethost" class="tsd-kind-icon">get<wbr>Host</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#getlisteners" class="tsd-kind-icon">get<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#getport" class="tsd-kind-icon">get<wbr>Port</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#getrequestedhost" class="tsd-kind-icon">get<wbr>Requested<wbr>Host</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#getsenddelay" class="tsd-kind-icon">get<wbr>Send<wbr>Delay</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#gettype" class="tsd-kind-icon">get<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#hellocompletelistener" class="tsd-kind-icon">hello<wbr>Complete<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#helloerrorlistener" class="tsd-kind-icon">hello<wbr>Error<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#incomingcompletelistener" class="tsd-kind-icon">incoming<wbr>Complete<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#incomingerrorlistener" class="tsd-kind-icon">incoming<wbr>Error<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#isready" class="tsd-kind-icon">is<wbr>Ready</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#isvalid" class="tsd-kind-icon">is<wbr>Valid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#outgoingcompletelistener" class="tsd-kind-icon">outgoing<wbr>Complete<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#outgoingerrorlistener" class="tsd-kind-icon">outgoing<wbr>Error<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.httpdirectconnection.html#retryincoming" class="tsd-kind-icon">retry<wbr>Incoming</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#send" class="tsd-kind-icon">send</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#setorbiter" class="tsd-kind-icon">set<wbr>Orbiter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#setretrydelay" class="tsd-kind-icon">set<wbr>Retry<wbr>Delay</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#setsenddelay" class="tsd-kind-icon">set<wbr>Send<wbr>Delay</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#setserver" class="tsd-kind-icon">set<wbr>Server</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.httpdirectconnection.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="net.user1.orbiter.httpdirectconnection.html#transmithellomessage" class="tsd-kind-icon">transmit<wbr>Hello<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#hellorequesterrorlistener" class="tsd-kind-icon">hello<wbr>Request<wbr>Error<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#hellorequestreadystatechangelistener" class="tsd-kind-icon">hello<wbr>Request<wbr>Readystatechange<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#incomingrequesterrorlistener" class="tsd-kind-icon">incoming<wbr>Request<wbr>Error<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#incomingrequestreadystatechangelistener" class="tsd-kind-icon">incoming<wbr>Request<wbr>Readystatechange<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#outgoingrequesterrorlistener" class="tsd-kind-icon">outgoing<wbr>Request<wbr>Error<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.httpdirectconnection.html#outgoingrequestreadystatechangelistener" class="tsd-kind-icon">outgoing<wbr>Request<wbr>Readystatechange<wbr>Listener</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

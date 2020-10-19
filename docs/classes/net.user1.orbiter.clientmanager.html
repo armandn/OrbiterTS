@@ -1,0 +1,1414 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ClientManager | OrbiterTS - v3.0.0</title>
+	<meta name="description" content="Documentation for OrbiterTS - v3.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">OrbiterTS - v3.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/net.html">net</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.html">user1</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.orbiter.html">orbiter</a>
+				</li>
+				<li>
+					<a href="net.user1.orbiter.clientmanager.html">ClientManager</a>
+				</li>
+			</ul>
+			<h1>Class ClientManager</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The ClientManager class provides centralized access to Client instances, which represent
+							clients connected to Union Server. Any client that is known to the current client (for
+							example, a client in the same room as the current client) can be accessed via
+						<a href="net.user1.orbiter.clientmanager.html#getclient">ClientManager.getClient</a> method.</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="tsd-signature-type">EventDispatcher</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ClientManager</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="net.user1.orbiter.clientmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.clientmanager.html#target" class="tsd-kind-icon">target</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.clientmanager.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#ban" class="tsd-kind-icon">ban</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#clientisknown" class="tsd-kind-icon">client<wbr>IsKnown</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.clientmanager.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#firebanclientresult" class="tsd-kind-icon">fire<wbr>Ban<wbr>Client<wbr>Result</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getattributeforclients" class="tsd-kind-icon">get<wbr>Attribute<wbr>For<wbr>Clients</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getbannedaddresses" class="tsd-kind-icon">get<wbr>Banned<wbr>Addresses</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getclient" class="tsd-kind-icon">get<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getclientbyattribute" class="tsd-kind-icon">get<wbr>Client<wbr>ByAttribute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getclientbyuserid" class="tsd-kind-icon">get<wbr>Client<wbr>ByUserID</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getclients" class="tsd-kind-icon">get<wbr>Clients</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getdefaultclientclass" class="tsd-kind-icon">get<wbr>Default<wbr>Client<wbr>Class</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getinternalclient" class="tsd-kind-icon">get<wbr>Internal<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getinternalclients" class="tsd-kind-icon">get<wbr>Internal<wbr>Clients</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getlifetimenumclientsknown" class="tsd-kind-icon">get<wbr>Lifetime<wbr>Num<wbr>Clients<wbr>Known</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.clientmanager.html#getlisteners" class="tsd-kind-icon">get<wbr>Listeners</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getnumclients" class="tsd-kind-icon">get<wbr>Num<wbr>Clients</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#getnumclientsonserver" class="tsd-kind-icon">get<wbr>Num<wbr>Clients<wbr>OnServer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.clientmanager.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#haswatchedclient" class="tsd-kind-icon">has<wbr>Watched<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#isobservingclient" class="tsd-kind-icon">is<wbr>Observing<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#iswatchingforbannedaddresses" class="tsd-kind-icon">is<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#iswatchingforclients" class="tsd-kind-icon">is<wbr>Watching<wbr>For<wbr>Clients</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#kickclient" class="tsd-kind-icon">kick<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#observeclient" class="tsd-kind-icon">observe<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="net.user1.orbiter.clientmanager.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#sendmessage" class="tsd-kind-icon">send<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="net.user1.orbiter.clientmanager.html#setdefaultclientclass" class="tsd-kind-icon">set<wbr>Default<wbr>Client<wbr>Class</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#stopwatchingforbannedaddresses" class="tsd-kind-icon">stop<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#stopwatchingforclients" class="tsd-kind-icon">stop<wbr>Watching<wbr>For<wbr>Clients</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#unban" class="tsd-kind-icon">unban</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#watchforbannedaddresses" class="tsd-kind-icon">watch<wbr>For<wbr>Banned<wbr>Addresses</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.clientmanager.html#watchforclients" class="tsd-kind-icon">watch<wbr>For<wbr>Clients</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Client<wbr>Manager<span class="tsd-signature-symbol">(</span>roomManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.roommanager.html" class="tsd-signature-type">RoomManager</a>, accountManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.accountmanager.html" class="tsd-signature-type">AccountManager</a>, connectionManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.connectionmanager.html" class="tsd-signature-type">ConnectionManager</a>, messageManager<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.messagemanager.html" class="tsd-signature-type">MessageManager</a>, server<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.server.html" class="tsd-signature-type">Server</a>, log<span class="tsd-signature-symbol">: </span><a href="net.user1.logger.logger.html" class="tsd-signature-type">Logger</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.clientmanager.html" class="tsd-signature-type">ClientManager</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides EventDispatcher.__constructor</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>roomManager: <a href="net.user1.orbiter.roommanager.html" class="tsd-signature-type">RoomManager</a></h5>
+								</li>
+								<li>
+									<h5>accountManager: <a href="net.user1.orbiter.accountmanager.html" class="tsd-signature-type">AccountManager</a></h5>
+								</li>
+								<li>
+									<h5>connectionManager: <a href="net.user1.orbiter.connectionmanager.html" class="tsd-signature-type">ConnectionManager</a></h5>
+								</li>
+								<li>
+									<h5>messageManager: <a href="net.user1.orbiter.messagemanager.html" class="tsd-signature-type">MessageManager</a></h5>
+								</li>
+								<li>
+									<h5>server: <a href="net.user1.orbiter.server.html" class="tsd-signature-type">Server</a></h5>
+								</li>
+								<li>
+									<h5>log: <a href="net.user1.logger.logger.html" class="tsd-signature-type">Logger</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.clientmanager.html" class="tsd-signature-type">ClientManager</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="target" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventDispatcher</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from EventDispatcher.target</p>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="addeventlistener" class="tsd-anchor"></a>
+					<h3>add<wbr>Event<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, priority<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.addEventListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> priority: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ban" class="tsd-anchor"></a>
+					<h3>ban</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">ban<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, duration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, reason<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disconnects any clients with the specified address (typically an IP address) and prevents
+										any future client connections from that address. By default, ban() requires administrator
+										privileges. To allow other types of clients (such as moderators) to ban addresses, define
+									a remote-client security rule.</p>
+								</div>
+								<p>The result of the ban attempt is returned via a <a href="net.user1.orbiter.clientmanagerevent.html#ban_result">ClientManagerEvent.BAN_RESULT</a> event.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The address to ban (typically an IP address).</p>
+									</div>
+								</li>
+								<li>
+									<h5>duration: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The duration of the ban, in seconds.</p>
+									</div>
+								</li>
+								<li>
+									<h5>reason: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An arbitrary, optional string indicating the reason for the ban. The
+										reason string is saved in the server-side ban list.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clientisknown" class="tsd-anchor"></a>
+					<h3>client<wbr>IsKnown</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">client<wbr>IsKnown<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a Boolean indicating whether the client with the specified clientID is known to
+									the current client. The client is &quot;known&quot; in the following situations:</p>
+									<ul>
+										<li>The ClientManager is watching for clients, and a client with the specified id is
+										connected to Union Server. See the <a href="net.user1.orbiter.clientmanager.html#watchforclients">ClientManager.watchForClients</a> method.</li>
+										<li>The client with the specified clientID is in a room that the current client is either
+											in or observing, and the current client&#39;s update levels for the room include
+										occupant-list updates (see the <a href="net.user1.orbiter.updatelevels.html">UpdateLevels</a> class).</li>
+										<li>The client with the specified clientID is observing a room that the current client
+											is either in or observing, and the current client&#39;s update levels for the
+										room include observer-list updates (see the UpdateLevels class).</li>
+										<li>The current client is observing the client with the specified clientID.
+										See <a href="net.user1.orbiter.clientmanager.html#observeclient">ClientManager.observeClient</a> method.</li>
+										<li>The client with the specified clientID is logged in, and the current client is watching
+										for user accounts. See <a href="net.user1.orbiter.accountmanager.html#watchforaccounts">AccountManager.watchForAccounts</a> method.</li>
+										<li>The client with the specified clientID is logged into an account being observed by the
+										current client. See <a href="net.user1.orbiter.accountmanager.html#observeaccount">AccountManager.observeAccount</a> method.</li>
+										<li>The client with the specified clientID is the current client.</li>
+									</ul>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="dispatchevent" class="tsd-anchor"></a>
+					<h3>dispatch<wbr>Event</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">dispatch<wbr>Event<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Event</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.dispatchEvent</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">Event</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Permanently disables this object. The object cannot be reused. The dispose() method&#39;s
+									purpose is to put this object into a state in which it can be garbage collected.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="firebanclientresult" class="tsd-anchor"></a>
+					<h3>fire<wbr>Ban<wbr>Client<wbr>Result</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">fire<wbr>Ban<wbr>Client<wbr>Result<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, status<span class="tsd-signature-symbol">: </span><a href="../enums/net.user1.orbiter.status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>address: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>status: <a href="../enums/net.user1.orbiter.status.html" class="tsd-signature-type">Status</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getattributeforclients" class="tsd-anchor"></a>
+					<h3>get<wbr>Attribute<wbr>For<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Attribute<wbr>For<wbr>Clients<span class="tsd-signature-symbol">(</span>clientIDs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, attrName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, attrScope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an array of objects containing values for the specified attribute for all clients
+										in supplied clientIDs. Each object in the returned array has a <code>clientID</code> property
+										(giving the client id), and a <code>value</code> property (giving the attribute value).
+										The value property will be <code>null</code> for clients in clientIDs that either do not exist or do
+									not have a value set for the specified attribute.</p>
+								</div>
+								<p>For information on client attributes see the <a href="net.user1.orbiter.client.html#setattribute">Client.setAttribute</a> method.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientIDs: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An array of client ids indicating the clients for which to retrieve the
+										specified attribute.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attrName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the attribute to retrieve.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> attrScope: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The scope of the attribute to retrieve. Omit for global attributes.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbannedaddresses" class="tsd-anchor"></a>
+					<h3>get<wbr>Banned<wbr>Addresses</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Banned<wbr>Addresses<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclient" class="tsd-anchor"></a>
+					<h3>get<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Client<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns an object representing the specified client; by default, the object is an
+										instance of the Client class. However, if a custom class has been specified for the
+									client in the specified scope, the object will be an instance of that custom class.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The server-generated client ID for the client.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> scope: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An optional fully qualified room id (e.g., &quot;examples.chatRoom&quot;).</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclientbyattribute" class="tsd-anchor"></a>
+					<h3>get<wbr>Client<wbr>ByAttribute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Client<wbr>ByAttribute<span class="tsd-signature-symbol">(</span>attributeName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, attributeValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, attributeScope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, roomScope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the first client known to the ClientManager that has an attribute name and value
+										matching the specified attribute name and value. If no client has a matching attribute,
+									returns null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attributeName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the attribute to match.</p>
+									</div>
+								</li>
+								<li>
+									<h5>attributeValue: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value of the attribute to match.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> attributeScope: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The scope of the attribute to match. Use undefined for global.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> roomScope: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A fully qualified room id (e.g., &quot;examples.chatRoom&quot;).
+										For details, see the &quot;scope&quot; parameter of the <a href="net.user1.orbiter.clientmanager.html#getclient">getClient</a> method.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclientbyuserid" class="tsd-anchor"></a>
+					<h3>get<wbr>Client<wbr>ByUserID</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Client<wbr>ByUserID<span class="tsd-signature-symbol">(</span>userID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, scope<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the client that is logged into the account specified by userID. If no known
+									client is logged in under the specified userID, returns null.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>userID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A user account&#39;s userID.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> scope: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A fully qualified room id (e.g., &quot;examples.chatRoom&quot;).
+											For details, see the &quot;scope&quot; parameter of the
+										<a href="net.user1.orbiter.clientmanager.html#getclient">ClientManager.getClient</a> method.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getclients" class="tsd-anchor"></a>
+					<h3>get<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Clients<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a list of all client objects known to the current client. Each client object in
+									the list is an instance of either Client or a custom client class.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdefaultclientclass" class="tsd-anchor"></a>
+					<h3>get<wbr>Default<wbr>Client<wbr>Class</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>Client<wbr>Class<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the class used as the global default class for clients in this application.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getinternalclient" class="tsd-anchor"></a>
+					<h3>get<wbr>Internal<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Internal<wbr>Client<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the internal Client object for the specified client id. This method is required
+										in one situation only: when an application specifies a custom client class that does not
+										extend CustomClient, it must implement IClient directly, and compose a Client instance.
+										To obtain the composed instance, the custom class must use getInternalClient().
+										Otherwise, client applications should retrieve Client objects via
+									<a href="net.user1.orbiter.clientmanager.html#getclient">getClient</a>, not <a href="net.user1.orbiter.clientmanager.html#getinternalclient">getInternalClient</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The server-generated client ID.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getinternalclients" class="tsd-anchor"></a>
+					<h3>get<wbr>Internal<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Internal<wbr>Clients<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a hash of Client objects known to the current client, where the hash keys are
+										client IDs, and the hash values are Client objects. Contrast with <a href="net.user1.orbiter.clientmanager.html#getclients">getClients</a>, whose
+										client objects are instances custom client classes for any client that specifies a custom
+										client class. Because getInternalClients() performs no custom-client-class lookup, is
+									faster than getClients().</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-index-signature">
+									<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="net.user1.orbiter.client.html" class="tsd-signature-type">Client</a></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlifetimenumclientsknown" class="tsd-anchor"></a>
+					<h3>get<wbr>Lifetime<wbr>Num<wbr>Clients<wbr>Known</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Lifetime<wbr>Num<wbr>Clients<wbr>Known<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the total number of clients that have ever been known to the current client,
+									excluding itself.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getlisteners" class="tsd-anchor"></a>
+					<h3>get<wbr>Listeners</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Listeners<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.getListeners</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnumclients" class="tsd-anchor"></a>
+					<h3>get<wbr>Num<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Num<wbr>Clients<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of clients known to Orbiter. When the ClientManager is watching for
+										clients (see <a href="net.user1.orbiter.clientmanager.html#watchforclients">watchForClients</a>), getNumClients() returns the actual number of clients
+										currently connected to Union Server. When the ClientManager is <strong>not</strong> watching for
+										clients, getNumClients() returns only the number of clients about which the current
+										client is aware. For example, if the current client is in a room with three other
+										clients, and has no other awareness of clients on the server, then getNumClients() will
+									return 4, even though more than 4 clients might be connected to the server.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnumclientsonserver" class="tsd-anchor"></a>
+					<h3>get<wbr>Num<wbr>Clients<wbr>OnServer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Num<wbr>Clients<wbr>OnServer<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the ClientManager is watching for clients, getNumClientsOnServer() returns the number
+										of clients on the server; otherwise, getNumClientsOnServer() returns 0. When the
+										ClientManager is watching for clients, the getNumClientsOnServer() method provides a
+									faster alternative to getNumClients().</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="haslistener" class="tsd-anchor"></a>
+					<h3>has<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.hasListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="haswatchedclient" class="tsd-anchor"></a>
+					<h3>has<wbr>Watched<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Watched<wbr>Client<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the client with the specified clientID is in the watched client list;
+									false otherwise.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isobservingclient" class="tsd-anchor"></a>
+					<h3>is<wbr>Observing<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Observing<wbr>Client<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the client with the specified clientID is currently being observed;
+									false otherwise.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iswatchingforbannedaddresses" class="tsd-anchor"></a>
+					<h3>is<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iswatchingforclients" class="tsd-anchor"></a>
+					<h3>is<wbr>Watching<wbr>For<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Watching<wbr>For<wbr>Clients<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates whether the current client is currently watching for clients.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="kickclient" class="tsd-anchor"></a>
+					<h3>kick<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">kick<wbr>Client<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disconnects the specified client from the server. By default, requires moderator
+									privileges.</p>
+								</div>
+								<p>The result of the kick attempt is returned via a
+								<a href="net.user1.orbiter.clientmanagerevent.html#kick_result">ClientManagerEvent.KICK_RESULT</a> event.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The clientID of the client to kick.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="observeclient" class="tsd-anchor"></a>
+					<h3>observe<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">observe<wbr>Client<span class="tsd-signature-symbol">(</span>clientID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to register the current client as an observer of the client specified by
+										clientID. The result of the request is returned via a <a href="net.user1.orbiter.clientevent.html#observe_result">ClientEvent.OBSERVE_RESULT</a>
+										event triggered by the ClientManager. If the request succeeds, Orbiter creates a Client
+										object for the client (if one does not already exist), and a <a href="net.user1.orbiter.clientevent.html#observe">ClientEvent.OBSERVE</a>
+										event is triggered by the ClientManager. The Client object is then synchronized with the
+										server-side state of the client. Subsequently if the specified client&#39;s state changes,
+									the current client is notified in the following ways:</p>
+									<ul>
+										<li>Observed client&#39;s attribute changes: the Client object triggers a
+										AttributeEvent.UPDATE event</li>
+										<li>Observed client&#39;s attribute is deleted: the Client object triggers a
+										AttributeEvent.DELETE event</li>
+										<li>Observed client joins a room: the Client object triggers a ClientEvent.JOIN_ROOM event</li>
+										<li>Observed client leaves a room: the Client object triggers a
+										ClientEvent.LEAVE_ROOM event</li>
+										<li>Observed client observes a room: the Client object triggers a ClientEvent.OBSERVE_ROOM
+										event</li>
+										<li>Observed client stops observing a room: the Client object triggers a
+										ClientEvent.STOP_OBSERVING_ROOM event</li>
+										<li>Observed client logs into a user account: current client&#39;s AccountManager triggers an
+										AccountEvent.LOGIN event</li>
+										<li>Observed client logs off of a user account: current client&#39;s AccountManager triggers an
+										AccountEvent.LOGOFF event</li>
+										<li>Observed client disconnects: current client&#39;s ClientManager triggers the
+										ClientManagerEvent.CLIENT_DISCONNECTED event</li>
+									</ul>
+								</div>
+								<p>To stop observing a client, use <a href="net.user1.orbiter.client.html#stopobserving">Client.stopObserving</a> method.</p>
+								<p>Client observation is used when a client wishes to stay informed of the state of an
+									arbitrary list of clients, as is typical in applications with client match-making or
+								administrative interfaces.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>clientID: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The clientID of the client to observe.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="removeeventlistener" class="tsd-anchor"></a>
+					<h3>remove<wbr>Event<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from EventDispatcher.removeEventListener</p>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>listener: <span class="tsd-signature-type">Function</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sendmessage" class="tsd-anchor"></a>
+					<h3>send<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Message<span class="tsd-signature-symbol">(</span>messageName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, clientIDs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, filters<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.filters.filter.html" class="tsd-signature-type">Filter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, <span class="tsd-signature-symbol">...</span>rest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends a message to a set of specified <code>clientIDs</code>. To send a message to a single client
+										only, use <a href="net.user1.orbiter.client.html#sendmessage">Client.sendMessage</a> method. To receive the message, recipient clients must
+									register a message listener via  <a href="net.user1.orbiter.messagemanager.html#addmessagelistener">MessageManager.addMessageListener</a> method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>messageName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the message to send.</p>
+									</div>
+								</li>
+								<li>
+									<h5>clientIDs: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An array of the recipient client ID(s) for the message.</p>
+									</div>
+								</li>
+								<li>
+									<h5>filters: <a href="net.user1.orbiter.filters.filter.html" class="tsd-signature-type">Filter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specifies one or more filters for the message. A filter specifies a
+											requirement that each client must meet in order to receive the
+											message. For example, a filter might indicate that only those clients
+											with the attribute &quot;team&quot; set to &quot;red&quot; should receive the message.
+										If filters is null, all specified clients receive the message.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>rest: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An optional comma-separated list of string arguments for the message.
+											These will be passed to any listeners registered to receive the
+										message. See <a href="net.user1.orbiter.messagemanager.html#addmessagelistener">MessageManager.addMessageListener</a> method.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="setdefaultclientclass" class="tsd-anchor"></a>
+					<h3>set<wbr>Default<wbr>Client<wbr>Class</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Default<wbr>Client<wbr>Class&lt;T&gt;<span class="tsd-signature-symbol">(</span>defaultClass<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Assigns a class to use as the default class for all clients in the application.</p>
+								</div>
+								<p>By default, all clients are represented by instances of the Client class. An application
+									can, however, choose to represent clients with a custom class. The custom client class
+									can be specified on a per-client basis via the <a href="net.user1.orbiter.client.html#setclientclass">Client.setClientClass</a> method. Or, the
+									custom class can be specified on a per-room basis via the
+									<a href="net.user1.orbiter.room.html#setdefaultclientclass">Room.setDefaultClientClass</a> method. Or, the custom class can be specified globally via
+									the ClientManager class&#39;s setDefaultClientClass() method. When a class has been specified
+									globally via setDefaultClientClass(), it is used as the client class for any client
+								retrieved via <a href="net.user1.orbiter.clientmanager.html#getclient">ClientManager.getClient</a> method with an unspecified scope.</p>
+								<p>Any custom class specified via Room&#39;s setDefaultClientClass() method overrides the global
+									default client class. Similarly, any custom class specified via Client&#39;s setClientClass()
+								method overrides the room and global default client class.</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>defaultClass: <span class="tsd-signature-symbol">{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The global default client class. The class is normally a descendant
+										of CustomClient.</p>
+									</div>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="stopwatchingforbannedaddresses" class="tsd-anchor"></a>
+					<h3>stop<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">stop<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to stop watching for banned addresses. In response, the server no longer
+									sends notifications when an addresses is banned or unbanned.</p>
+								</div>
+								<p>The result of a stopWatchingForBannedAddresses() request is returned via
+								a <a href="net.user1.orbiter.clientmanagerevent.html#stop_watching_for_banned_addresses_result">ClientManagerEvent.STOP_WATCHING_FOR_BANNED_ADDRESSES_RESULT</a> event.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="stopwatchingforclients" class="tsd-anchor"></a>
+					<h3>stop<wbr>Watching<wbr>For<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">stop<wbr>Watching<wbr>For<wbr>Clients<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to stop watching for clients. In response, the server no longer sends
+										notifications when a client connects or disconnects. The result of a
+										stopWatchingForClients() request is returned via
+									ClientManagerEvent.STOP_WATCHING_FOR_CLIENTS_RESULT.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="unban" class="tsd-anchor"></a>
+					<h3>unban</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">unban<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes any ban currently in effect for the specified address (typically an IP address).
+										By default, unban() requires administrator privileges. To allow other types of clients
+									(such as moderators) to unban addresses, define a remote-client security rule.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The address to unban (typically an IP address).</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="watchforbannedaddresses" class="tsd-anchor"></a>
+					<h3>watch<wbr>For<wbr>Banned<wbr>Addresses</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">watch<wbr>For<wbr>Banned<wbr>Addresses<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to send its list of banned client addresses, and then send notification
+										any time an address is banned or unbanned. When the banned list is ready, ClientManager
+										dispatches a <a href="net.user1.orbiter.clientmanagerevent.html#synchronize_banlist">ClientManagerEvent.SYNCHRONIZE_BANLIST</a> event. Subsequently, when a
+										client address is banned, ClientManager dispatches a
+										<a href="net.user1.orbiter.clientmanagerevent.html#address_banned">ClientManagerEvent.ADDRESS_BANNED</a> event  and when a client address is unbanned,
+									ClientManager dispatches a <a href="net.user1.orbiter.clientmanagerevent.html#address_unbanned">ClientManagerEvent.ADDRESS_UNBANNED</a> event.</p>
+								</div>
+								<p>The result of a watchForBannedAddresses() request is returned via a
+								<a href="net.user1.orbiter.clientmanagerevent.html#watch_for_banned_addresses_result">ClientManagerEvent.WATCH_FOR_BANNED_ADDRESSES_RESULT</a> event.</p>
+								<p>By default, watchForBannedAddresses() requires administrator privileges. To allow other
+									types of clients (such as moderators) to access the banned address list, define a
+								remote-client security rule.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="watchforclients" class="tsd-anchor"></a>
+					<h3>watch<wbr>For<wbr>Clients</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">watch<wbr>For<wbr>Clients<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asks the server to send a list of clients currently connected to the server, and then
+										send notification any time a client connects or disconnects. When the client list is
+										ready, ClientManager dispatches a <a href="net.user1.orbiter.clientmanagerevent.html#synchronize">ClientManagerEvent.SYNCHRONIZE</a> event. Subsequent
+										client connections trigger a <a href="net.user1.orbiter.clientmanagerevent.html#client_connected">ClientManagerEvent.CLIENT_CONNECTED</a> event. Subsequent
+									disconnections trigger a <a href="net.user1.orbiter.clientmanagerevent.html#client_disconnected">ClientManagerEvent.CLIENT_DISCONNECTED</a> event.</p>
+								</div>
+								<p>Clients that are added to the ClientManager&#39;s client list in response to
+									watchForClients() do not have attributes loaded. To load attributes for a specific
+									client, use <a href="net.user1.orbiter.client.html#observe">Client.observe</a> method or <a href="net.user1.orbiter.clientmanager.html#observeclient">ClientManager.observeClient</a> method. In the
+									default configuration, attributes can also be loaded for a given client by joining a room
+								containing that client.</p>
+								<p>As an alternative to watchForClients(), applications can maintain an arbitrary shared
+									list of clients (with attributes automatically loaded or not) by creating an application
+									room and then forcing all clients in the application to join that room. Clients wishing
+									to load the list without being included in it can observe the application room and
+									register for <a href="net.user1.orbiter.roomevent.html#add_occupant">RoomEvent.ADD_OCCUPANT</a> and <a href="net.user1.orbiter.roomevent.html#remove_occupant">RoomEvent.REMOVE_OCCUPANT</a> events.
+									Clients in the list can ignore client list updates by turning off updates for the room
+									via the Room class&#39;s setUpdateLevels() method. In applications that wish to manage client
+									lists, room-based client lists are normally more appropriate than watchForClients().
+									The watchForClients() method is intended for use primarily in cases where the list of
+									rooms and clients on Union Server is not known in advance, and cannot be controlled (as
+									is often true for server-administration applications). As a final alternative to
+									watchForClients(), applications can use the ClientListSnapshot class to load a one-time
+								list of clients on the server.</p>
+								<p>The result of a watchForClients() request is returned via a
+								<a href="net.user1.orbiter.clientmanagerevent.html#watch_for_clients_result">ClientManagerEvent.WATCH_FOR_CLIENTS_RESULT</a> event.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/net.html">net</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.html">net.user1</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.logger.html">net.user1.logger</a>
+					</li>
+					<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.html">net.user1.orbiter</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.filters.html">net.user1.orbiter.filters</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.snapshot.html">net.user1.orbiter.snapshot</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.utils.html">net.user1.utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="net.user1.orbiter.clientmanager.html" class="tsd-kind-icon">Client<wbr>Manager</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="net.user1.orbiter.clientmanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.clientmanager.html#target" class="tsd-kind-icon">target</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.clientmanager.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#ban" class="tsd-kind-icon">ban</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#clientisknown" class="tsd-kind-icon">client<wbr>IsKnown</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.clientmanager.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#firebanclientresult" class="tsd-kind-icon">fire<wbr>Ban<wbr>Client<wbr>Result</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getattributeforclients" class="tsd-kind-icon">get<wbr>Attribute<wbr>For<wbr>Clients</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getbannedaddresses" class="tsd-kind-icon">get<wbr>Banned<wbr>Addresses</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getclient" class="tsd-kind-icon">get<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getclientbyattribute" class="tsd-kind-icon">get<wbr>Client<wbr>ByAttribute</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getclientbyuserid" class="tsd-kind-icon">get<wbr>Client<wbr>ByUserID</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getclients" class="tsd-kind-icon">get<wbr>Clients</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getdefaultclientclass" class="tsd-kind-icon">get<wbr>Default<wbr>Client<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getinternalclient" class="tsd-kind-icon">get<wbr>Internal<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getinternalclients" class="tsd-kind-icon">get<wbr>Internal<wbr>Clients</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getlifetimenumclientsknown" class="tsd-kind-icon">get<wbr>Lifetime<wbr>Num<wbr>Clients<wbr>Known</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.clientmanager.html#getlisteners" class="tsd-kind-icon">get<wbr>Listeners</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getnumclients" class="tsd-kind-icon">get<wbr>Num<wbr>Clients</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#getnumclientsonserver" class="tsd-kind-icon">get<wbr>Num<wbr>Clients<wbr>OnServer</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.clientmanager.html#haslistener" class="tsd-kind-icon">has<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#haswatchedclient" class="tsd-kind-icon">has<wbr>Watched<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#isobservingclient" class="tsd-kind-icon">is<wbr>Observing<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#iswatchingforbannedaddresses" class="tsd-kind-icon">is<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#iswatchingforclients" class="tsd-kind-icon">is<wbr>Watching<wbr>For<wbr>Clients</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#kickclient" class="tsd-kind-icon">kick<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#observeclient" class="tsd-kind-icon">observe<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="net.user1.orbiter.clientmanager.html#removeeventlistener" class="tsd-kind-icon">remove<wbr>Event<wbr>Listener</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#sendmessage" class="tsd-kind-icon">send<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="net.user1.orbiter.clientmanager.html#setdefaultclientclass" class="tsd-kind-icon">set<wbr>Default<wbr>Client<wbr>Class</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#stopwatchingforbannedaddresses" class="tsd-kind-icon">stop<wbr>Watching<wbr>For<wbr>Banned<wbr>Addresses</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#stopwatchingforclients" class="tsd-kind-icon">stop<wbr>Watching<wbr>For<wbr>Clients</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#unban" class="tsd-kind-icon">unban</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#watchforbannedaddresses" class="tsd-kind-icon">watch<wbr>For<wbr>Banned<wbr>Addresses</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.clientmanager.html#watchforclients" class="tsd-kind-icon">watch<wbr>For<wbr>Clients</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

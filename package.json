@@ -1,0 +1,14 @@
+{
+  "name": "OrbiterTS",
+  "version": "3.0.0",
+  "description": "Client for Union Platform",
+  "author": "Armand Niculescu",
+  "license": "LicenseRef-LICENSE",
+  "private": true,
+  "dependencies": {
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "typedoc": "^0.19.2"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": 
+  {
+    "lib":                          ["DOM","es2015"],
+	"module":                       "system",
+    "noImplicitAny":                true,
+    "noImplicitReturns":            true,
+    "noImplicitThis":               true,
+	"outFile":                      "./dist/orbiter.js",
+    "pretty":                       true,
+    "removeComments":               true,
+	"strict":                       true,
+	"strictBindCallApply":          true,
+	"strictFunctionTypes":          true,
+	"strictNullChecks":             true,
+	"strictPropertyInitialization": true,
+    "target":                       "ES5"
+  },
+  "formatCodeOptions": 
+  {
+    "indentSize": 4,
+    "tabSize":    4
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

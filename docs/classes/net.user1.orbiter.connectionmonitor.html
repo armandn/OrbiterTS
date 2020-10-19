@@ -1,0 +1,787 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ConnectionMonitor | OrbiterTS - v3.0.0</title>
+	<meta name="description" content="Documentation for OrbiterTS - v3.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">OrbiterTS - v3.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/net.html">net</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.html">user1</a>
+				</li>
+				<li>
+					<a href="../modules/net.user1.orbiter.html">orbiter</a>
+				</li>
+				<li>
+					<a href="net.user1.orbiter.connectionmonitor.html">ConnectionMonitor</a>
+				</li>
+			</ul>
+			<h1>Class ConnectionMonitor</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The ConnectionMonitor class provides an application heartbeat and automatic disconnection and
+							reconnection services. By default, the ConnectionMonitor sends a heartbeat every 10 seconds,
+							and uses it to calculate the client&#39;s ping time. If no server response is received for over
+							60 seconds (the default), the ConnectionMonitor automatically closes the client connection.
+							Applications that wish to automatically reconnect after a connection failure must set the
+							&quot;reconnect frequency&quot; via <code>setAutoReconnectFrequency()</code>. ConnectionMonitor does not
+						automatically reconnect by default.</p>
+					</div>
+					<p>Note that the ConnectionMonitor class need not be instantiated directly; instead, each
+						Orbiter object creates a ConnectionMonitor instance automatically. To retrieve a given
+					Orbiter object&#39;s ConnectionMonitor instance, use the <a href="net.user1.orbiter.orbiter.html#getconnectionmonitor">Orbiter.getConnectionMonitor</a> method.</p>
+					<p>The ConnectionMonitor class can detect, and then automatically recover from, a dropped
+					internet connection.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ConnectionMonitor</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.connectionmonitor.html#default_autoreconnect_attempt_limit" class="tsd-kind-icon">DEFAULT_<wbr>AUTORECONNECT_<wbr>ATTEMPT_<wbr>LIMIT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.connectionmonitor.html#default_autoreconnect_frequency" class="tsd-kind-icon">DEFAULT_<wbr>AUTORECONNECT_<wbr>FREQUENCY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.connectionmonitor.html#default_connection_timeout" class="tsd-kind-icon">DEFAULT_<wbr>CONNECTION_<wbr>TIMEOUT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.connectionmonitor.html#default_heartbeat_frequency" class="tsd-kind-icon">DEFAULT_<wbr>HEARTBEAT_<wbr>FREQUENCY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="net.user1.orbiter.connectionmonitor.html#min_heartbeat_frequency" class="tsd-kind-icon">MIN_<wbr>HEARTBEAT_<wbr>FREQUENCY</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#disableheartbeat" class="tsd-kind-icon">disable<wbr>Heartbeat</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#disableheartbeatlogging" class="tsd-kind-icon">disable<wbr>Heartbeat<wbr>Logging</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#dispose" class="tsd-kind-icon">dispose</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#enableheartbeat" class="tsd-kind-icon">enable<wbr>Heartbeat</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#enableheartbeatlogging" class="tsd-kind-icon">enable<wbr>Heartbeat<wbr>Logging</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#getautoreconnectattemptlimit" class="tsd-kind-icon">get<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#getautoreconnectfrequency" class="tsd-kind-icon">get<wbr>Auto<wbr>Reconnect<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#getconnectiontimeout" class="tsd-kind-icon">get<wbr>Connection<wbr>Timeout</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#getheartbeatfrequency" class="tsd-kind-icon">get<wbr>Heartbeat<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#ispingshared" class="tsd-kind-icon">is<wbr>Ping<wbr>Shared</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#restoredefaults" class="tsd-kind-icon">restore<wbr>Defaults</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#setautoreconnectattemptlimit" class="tsd-kind-icon">set<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#setautoreconnectfrequency" class="tsd-kind-icon">set<wbr>Auto<wbr>Reconnect<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#setconnectiontimeout" class="tsd-kind-icon">set<wbr>Connection<wbr>Timeout</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#setheartbeatfrequency" class="tsd-kind-icon">set<wbr>Heartbeat<wbr>Frequency</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="net.user1.orbiter.connectionmonitor.html#shareping" class="tsd-kind-icon">share<wbr>Ping</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Connection<wbr>Monitor<span class="tsd-signature-symbol">(</span>orbiter<span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.orbiter.html" class="tsd-signature-type">Orbiter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="net.user1.orbiter.connectionmonitor.html" class="tsd-signature-type">ConnectionMonitor</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>orbiter: <a href="net.user1.orbiter.orbiter.html" class="tsd-signature-type">Orbiter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="net.user1.orbiter.connectionmonitor.html" class="tsd-signature-type">ConnectionMonitor</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="default_autoreconnect_attempt_limit" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> DEFAULT_<wbr>AUTORECONNECT_<wbr>ATTEMPT_<wbr>LIMIT</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>AUTORECONNECT_<wbr>ATTEMPT_<wbr>LIMIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">-1</span><span class="tsd-signature-symbol"> = -1</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The default value for the maximum number of reconnection attempts the
+								ConnectionMonitor will make when automatic reconnection is enabled;
+								defaults to -1, meaning never stop attempting to reconnect if automatic
+							reconnection is enabled.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="default_autoreconnect_frequency" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> DEFAULT_<wbr>AUTORECONNECT_<wbr>FREQUENCY</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>AUTORECONNECT_<wbr>FREQUENCY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">-1</span><span class="tsd-signature-symbol"> = -1</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The ConnectionMonitor&#39;s default automatic reconnection frequency
+							setting; defaults to -1 milliseconds, meaning don&#39;t attempt to reconnect.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="default_connection_timeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> DEFAULT_<wbr>CONNECTION_<wbr>TIMEOUT</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>CONNECTION_<wbr>TIMEOUT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">60000</span><span class="tsd-signature-symbol"> = 60000</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The ConnectionMonitor&#39;s default connection-timeout setting; defaults
+							to 60000 milliseconds (one minute).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="default_heartbeat_frequency" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> DEFAULT_<wbr>HEARTBEAT_<wbr>FREQUENCY</h3>
+					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>HEARTBEAT_<wbr>FREQUENCY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">10000</span><span class="tsd-signature-symbol"> = 10000</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The ConnectionMonitor&#39;s default heartbeat setting</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="min_heartbeat_frequency" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> MIN_<wbr>HEARTBEAT_<wbr>FREQUENCY</h3>
+					<div class="tsd-signature tsd-kind-icon">MIN_<wbr>HEARTBEAT_<wbr>FREQUENCY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">20</span><span class="tsd-signature-symbol"> = 20</span></div>
+					<aside class="tsd-sources">
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The ConnectionMonitor&#39;s minimum heartbeat setting</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="disableheartbeat" class="tsd-anchor"></a>
+					<h3>disable<wbr>Heartbeat</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">disable<wbr>Heartbeat<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disables the client-side heartbeat. When the heartbeat is disabled, client
+										ping time is not calculated, and client-side connection loss (due to,
+									for example, a disconnected network cable) may go undetected.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="disableheartbeatlogging" class="tsd-anchor"></a>
+					<h3>disable<wbr>Heartbeat<wbr>Logging</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">disable<wbr>Heartbeat<wbr>Logging<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prevents heartbeat-related messages from appearing in the client-side log.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="dispose" class="tsd-anchor"></a>
+					<h3>dispose</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dispose<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Permanently disables this ConnectionMonitor.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="enableheartbeat" class="tsd-anchor"></a>
+					<h3>enable<wbr>Heartbeat</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Heartbeat<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enables the client-side heartbeat, used to calculate ping time and
+										to detect connection loss. Note that ConnectionMonitor&#39;s heartbeat is
+										enabled by default, so enableHeartbeat() is required only when resuming a
+									heartbeat that has been disabled via <a href="net.user1.orbiter.connectionmonitor.html#disableheartbeat">disableHeartbeat</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="enableheartbeatlogging" class="tsd-anchor"></a>
+					<h3>enable<wbr>Heartbeat<wbr>Logging</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Heartbeat<wbr>Logging<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Allows heartbeat-related messages to appear in the client-side log.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getautoreconnectattemptlimit" class="tsd-anchor"></a>
+					<h3>get<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of times Orbiter will attempt to reconnect to Union Server
+									when automatic reconnection is enabled.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getautoreconnectfrequency" class="tsd-anchor"></a>
+					<h3>get<wbr>Auto<wbr>Reconnect<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Auto<wbr>Reconnect<wbr>Frequency<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of milliseconds between reconnection attempts made when
+										the connection to Union Server is lost. The return of
+										getAutoReconnectFrequency() is always an integer between the minMS and maxMS
+										values supplied to the most recent call to setAutoReconnectFrequency(),
+									inclusive.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getconnectiontimeout" class="tsd-anchor"></a>
+					<h3>get<wbr>Connection<wbr>Timeout</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Connection<wbr>Timeout<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the maximum round-trip time allowed for a heartbeat before the
+									client considers the connection lost and forces a disconnection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getheartbeatfrequency" class="tsd-anchor"></a>
+					<h3>get<wbr>Heartbeat<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Heartbeat<wbr>Frequency<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of milliseconds between application heartbeats.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="ispingshared" class="tsd-anchor"></a>
+					<h3>is<wbr>Ping<wbr>Shared</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Ping<wbr>Shared<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Indicates whether the current client&#39;s ping is currently shared with other clients.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="restoredefaults" class="tsd-anchor"></a>
+					<h3>restore<wbr>Defaults</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">restore<wbr>Defaults<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the monitor to its default configuration.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setautoreconnectattemptlimit" class="tsd-anchor"></a>
+					<h3>set<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit<span class="tsd-signature-symbol">(</span>attempts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Specifies the number of times Orbiter should attempt to reconnect to
+										Union Server when automatic reconnection is enabled. Defaults to -1
+										(no limit), which causes Orbiter to keep retrying to connect indefinitely
+										until a connection is established. To enable automatic reconnection, use
+									<a href="net.user1.orbiter.connectionmonitor.html#setautoreconnectfrequency">ConnectionMonitor.setAutoReconnectFrequency</a> method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>attempts: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setautoreconnectfrequency" class="tsd-anchor"></a>
+					<h3>set<wbr>Auto<wbr>Reconnect<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Auto<wbr>Reconnect<wbr>Frequency<span class="tsd-signature-symbol">(</span>minMS<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, maxMS<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, delayFirstAttempt<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Specifies the number of milliseconds between reconnection attempts made when
+										the connection to Union Server is lost. When minMS is a positive integer
+										and maxMS is greater than minMS, the actual number of milliseconds between
+										reconnection attempts is selected randomly upon disconnection, as an
+										integer between minMS and maxMS. The randomly selected reconnection
+										frequency is used until the next successful disconnection. For example,
+										if minMS is 7000, maxMS is 20000, and the randomly selected delay
+										following a disconnection is 9000, then connection attempts will occur at
+										9000 ms, 18,000 ms, 27,000 ms, and so on until the client successfully
+										reconnects. If the client disconnects again, a new value between 7000
+										and 20000 will be selected as the reconnection frequency. Must be
+									greater than 0. Values under 5000 ms are not recommended.</p>
+								</div>
+								<p>The random selection of reconnection frequency prevents heavy
+									simultaneous connection load during application outages. Without
+									random reconnection frequency selection, if Union Server forcibly
+									disconnected enough clients at the same time, and those clients were
+									configured to attempt reconnection upon disconnection, the simultaneous
+									reconnection attempts made by the disconnected clients could stress
+									Union Server beyond capacity. Load can be reduced by configuring clients
+									to reconnect after a random delay within a specified range rather than
+								at identical intervals.</p>
+								<p>If minMS is set to -1 (the default), ConnectionMonitor will not
+									automatically attempt to reconnect to Union Server. If an automatic
+									reconnect attempt is currently in progress when a new reconnect attempt
+									is scheduled to start, the existing attempt will be aborted before the
+									new attempt starts. Therefore, on a typical internet connection, where
+									a connection to Union server can take anywhere from 50 milliseconds to
+									10 seconds, setting minMS to anything lower than 5000
+									milliseconds can cause potentially successful connection attempts to
+									be prematurely aborted. Use caution when applying low automatic
+								reconnection frequencies.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>minMS: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The minimum number of milliseconds that must elapse between attempts.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> maxMS: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The maximum number of milliseconds that can elapse between reconnection
+											attempts. When not specified, maxMS defaults to the value specified by minMS
+											(i.e., no random value will be selected). Must be greater than or equal to
+										maxMS.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> delayFirstAttempt: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setconnectiontimeout" class="tsd-anchor"></a>
+					<h3>set<wbr>Connection<wbr>Timeout</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Connection<wbr>Timeout<span class="tsd-signature-symbol">(</span>milliseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the maximum round-trip time allowed for a heartbeat before the client considers the
+									connection lost and forces a disconnection. Defaults to 60 seconds (60000 ms).</p>
+								</div>
+								<p>The connection timeout is checked immediately before each heartbeat is sent. At
+									heartbeat-send time, if the oldest heartbeat has not received a response and the
+								connection timeout has elapsed, Orbiter disconnects.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>milliseconds: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The maximum round-trip time allowed for a single heartbeat message,
+										in milliseconds.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setheartbeatfrequency" class="tsd-anchor"></a>
+					<h3>set<wbr>Heartbeat<wbr>Frequency</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Heartbeat<wbr>Frequency<span class="tsd-signature-symbol">(</span>milliseconds<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the frequency of the application&#39;s &quot;heartbeat&quot;. For each heartbeat, the client
+										attempts to send a message to itself via the server. If the attempt succeeds, the client
+									sets its current ping time to the message round-trip time.</p>
+								</div>
+								<p>The ConnectionMonitor&#39;s heartbeat frequency defaults to one heartbeat every ten seconds.
+								To disable the ConnectionMonitor&#39;s heartbeat completely, invoke <a href="net.user1.orbiter.connectionmonitor.html#disableheartbeat">disableHeartbeat</a>.</p>
+								<p>When heartbeating is enabled in an application, if the ConnectionMonitor&#39;s current
+									connection timeout is set to a positive value, then failure to receive a heartbeat
+									message within the specified connection timeout triggers an automatic client-side
+								disconnect.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>milliseconds: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The number of milliseconds between heartbeats.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="shareping" class="tsd-anchor"></a>
+					<h3>share<wbr>Ping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">share<wbr>Ping<span class="tsd-signature-symbol">(</span>share<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Specifies whether the current client&#39;s ping should automatically be shared with
+										other clients. By default, a client&#39;s ping time is not shared with
+										other clients. When this client&#39;s ping is shared, other clients can
+									retrieve its value via <a href="net.user1.orbiter.client.html#getping">Client.getPing</a> method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>share: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="../modules/net.html">net</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.html">net.user1</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.logger.html">net.user1.logger</a>
+					</li>
+					<li class="current tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.html">net.user1.orbiter</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.filters.html">net.user1.orbiter.filters</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.orbiter.snapshot.html">net.user1.orbiter.snapshot</a>
+					</li>
+					<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+						<a href="../modules/net.user1.utils.html">net.user1.utils</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="net.user1.orbiter.connectionmonitor.html" class="tsd-kind-icon">Connection<wbr>Monitor</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.connectionmonitor.html#default_autoreconnect_attempt_limit" class="tsd-kind-icon">DEFAULT_<wbr>AUTORECONNECT_<wbr>ATTEMPT_<wbr>LIMIT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.connectionmonitor.html#default_autoreconnect_frequency" class="tsd-kind-icon">DEFAULT_<wbr>AUTORECONNECT_<wbr>FREQUENCY</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.connectionmonitor.html#default_connection_timeout" class="tsd-kind-icon">DEFAULT_<wbr>CONNECTION_<wbr>TIMEOUT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.connectionmonitor.html#default_heartbeat_frequency" class="tsd-kind-icon">DEFAULT_<wbr>HEARTBEAT_<wbr>FREQUENCY</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="net.user1.orbiter.connectionmonitor.html#min_heartbeat_frequency" class="tsd-kind-icon">MIN_<wbr>HEARTBEAT_<wbr>FREQUENCY</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#disableheartbeat" class="tsd-kind-icon">disable<wbr>Heartbeat</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#disableheartbeatlogging" class="tsd-kind-icon">disable<wbr>Heartbeat<wbr>Logging</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#dispose" class="tsd-kind-icon">dispose</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#enableheartbeat" class="tsd-kind-icon">enable<wbr>Heartbeat</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#enableheartbeatlogging" class="tsd-kind-icon">enable<wbr>Heartbeat<wbr>Logging</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#getautoreconnectattemptlimit" class="tsd-kind-icon">get<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#getautoreconnectfrequency" class="tsd-kind-icon">get<wbr>Auto<wbr>Reconnect<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#getconnectiontimeout" class="tsd-kind-icon">get<wbr>Connection<wbr>Timeout</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#getheartbeatfrequency" class="tsd-kind-icon">get<wbr>Heartbeat<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#ispingshared" class="tsd-kind-icon">is<wbr>Ping<wbr>Shared</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#restoredefaults" class="tsd-kind-icon">restore<wbr>Defaults</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#setautoreconnectattemptlimit" class="tsd-kind-icon">set<wbr>Auto<wbr>Reconnect<wbr>Attempt<wbr>Limit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#setautoreconnectfrequency" class="tsd-kind-icon">set<wbr>Auto<wbr>Reconnect<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#setconnectiontimeout" class="tsd-kind-icon">set<wbr>Connection<wbr>Timeout</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#setheartbeatfrequency" class="tsd-kind-icon">set<wbr>Heartbeat<wbr>Frequency</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="net.user1.orbiter.connectionmonitor.html#shareping" class="tsd-kind-icon">share<wbr>Ping</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

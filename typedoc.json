@@ -1,0 +1,11 @@
+{
+    "mode": "file",
+	"excludePrivate":true,
+	"excludeProtected":true,
+	"stripInternal":true,
+    "out": "docs",
+	"includeVersion":true,
+	"disableSources":true,
+	"listInvalidSymbolLinks":true,
+	"hideGenerator":true
+}
