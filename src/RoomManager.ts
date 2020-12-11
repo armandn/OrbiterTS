@@ -204,7 +204,8 @@ namespace net.user1.orbiter
 		 *                     room. For details, see the RoomSettings class.
 		 *
 		 * @param attributes An array of JavaScript objects that describes the initial room
-		 *                   attributes for the room in the following format*
+		 *                   attributes for the room in the following format:
+		 *     ```
 		 *     [
 		 *       attribute: {
 		 *         name:"attrName1",
@@ -219,9 +220,9 @@ namespace net.user1.orbiter
 		 *         shared:true,
 		 *         persistent:false,
 		 *         immutable:false
-		 *   }
-		 * ]
-		 *
+		 *       }
+		 *     ]
+		 *     ```
 		 * @param modules A RoomModules object specifying the server-side modules for the room.
 		 *                For details, see the RoomModules class.
 		 *
@@ -239,7 +240,7 @@ namespace net.user1.orbiter
 		 * only the first succeeds" is common in Orbiter because it produces less traffic than the
 		 * architecture of "check if the room exists first before asking to create it."
 		 */
-		createRoom(roomID:string, roomSettings:RoomSettings=new RoomModules(), attributes:{[key:string]:string|boolean}[], modules:RoomModules=new RoomModules()):Room|null
+		createRoom(roomID:string, roomSettings:RoomSettings=new RoomModules(), attributes?:{[key:string]:string|boolean}[], modules:RoomModules=new RoomModules()):Room|null
 		{
 			// Abort if invalid module name found.
 			const moduleIDs = modules.getIdentifiers();
