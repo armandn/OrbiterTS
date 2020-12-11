@@ -174,7 +174,7 @@ namespace net.user1.orbiter
 		 *                attribute "team" set to "red" should receive the message. For complete
 		 *                details, see the Filter class. If filters is null, all clients on the
 		 *                server receive the message.
-		 * @param ...rest An optional comma-separated list of string arguments for the message.
+		 * @param rest    An optional comma-separated list of string arguments for the message.
 		 *                These will be passed to any listeners registered to receive the message.
 		 *                See MessageManager's addMessageListener() method.
 		 */
@@ -188,8 +188,12 @@ namespace net.user1.orbiter
 
 			const msgMan = this.orbiter.getMessageManager(),
 			      args = [
+						      net.user1.orbiter.UPC.SEND_MESSAGE_TO_SERVER,
+						      messageName,
+						      includeSelf.toString(),
+						      filters?.toXMLString() ?? ''
+						];
 
-			];
 			msgMan.sendUPC(UPC.SEND_MESSAGE_TO_SERVER, messageName, includeSelf.toString(), filters?.toXMLString() ?? '', ...rest);
 		}
 
