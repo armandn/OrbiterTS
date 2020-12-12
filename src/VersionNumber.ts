@@ -6,8 +6,8 @@ namespace net.user1.orbiter
 		 * Represents a version number, including major, minor, revision, and
 		 * build components (e.g., 1.2.0.34).
 		 */
-		constructor(public major:number, public minor:number,
-		            public revision:number, public build:number=-1)
+		constructor(public major:number=0, public minor:number=0,
+		            public revision:number=0, public build:number=-1)
 		{
 		}
 
