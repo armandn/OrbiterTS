@@ -7444,6 +7444,9 @@ var net;
         (function (orbiter) {
             var VersionNumber = (function () {
                 function VersionNumber(major, minor, revision, build) {
+                    if (major === void 0) { major = 0; }
+                    if (minor === void 0) { minor = 0; }
+                    if (revision === void 0) { revision = 0; }
                     if (build === void 0) { build = -1; }
                     this.major = major;
                     this.minor = minor;
@@ -9746,7 +9749,7 @@ var net;
                     this.orbiter.getMessageManager().sendUPC(orbiter_7.UPC.RESET_UPC_STATS);
                 };
                 Server.prototype.sendMessage = function (messageName, includeSelf, filters) {
-                    var _a;
+                    var _a, _b;
                     if (includeSelf === void 0) { includeSelf = false; }
                     var rest = [];
                     for (var _i = 3; _i < arguments.length; _i++) {
@@ -9756,8 +9759,13 @@ var net;
                         this.log.warn('Server.sendMessage() failed. No messageName supplied.');
                         return;
                     }
-                    var msgMan = this.orbiter.getMessageManager(), args = [];
-                    msgMan.sendUPC.apply(msgMan, __spreadArrays([orbiter_7.UPC.SEND_MESSAGE_TO_SERVER, messageName, includeSelf.toString(), (_a = filters === null || filters === void 0 ? void 0 : filters.toXMLString()) !== null && _a !== void 0 ? _a : ''], rest));
+                    var msgMan = this.orbiter.getMessageManager(), args = [
+                        net.user1.orbiter.UPC.SEND_MESSAGE_TO_SERVER,
+                        messageName,
+                        includeSelf.toString(),
+                        (_a = filters === null || filters === void 0 ? void 0 : filters.toXMLString()) !== null && _a !== void 0 ? _a : ''
+                    ];
+                    msgMan.sendUPC.apply(msgMan, __spreadArrays([orbiter_7.UPC.SEND_MESSAGE_TO_SERVER, messageName, includeSelf.toString(), (_b = filters === null || filters === void 0 ? void 0 : filters.toXMLString()) !== null && _b !== void 0 ? _b : ''], rest));
                 };
                 Server.prototype.sendModuleMessage = function (moduleID, messageName, messageArguments) {
                     var _a;
