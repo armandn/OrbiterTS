@@ -201,7 +201,7 @@ namespace net.user1.orbiter
 			// @ts-ignore
 			this.messageManager = undefined;
 			// @ts-ignore
-			this.clientManager = undefinedl;
+			this.clientManager = undefined;
 			// @ts-ignore
 			this.roomManager = undefined;
 			// @ts-ignore

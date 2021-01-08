@@ -1523,7 +1523,7 @@ var net;
                     this.account = null;
                     this.customClients = undefined;
                     this.messageManager = undefined;
-                    this.clientManager = undefinedl;
+                    this.clientManager = undefined;
                     this.roomManager = undefined;
                     this.server = undefined;
                     this.disposed = true;
