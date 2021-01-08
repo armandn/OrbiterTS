@@ -11,9 +11,9 @@ namespace net.user1.orbiter.snapshot
 	{
 		private bannedList?:string[];
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 			this.method = UPC.GET_BANNED_LIST_SNAPSHOT;
 		}
 

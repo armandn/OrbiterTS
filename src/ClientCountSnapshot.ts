@@ -8,9 +8,9 @@ namespace net.user1.orbiter.snapshot
 	{
 		private count:number = 0;
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 
 			this.method = UPC.GET_CLIENTCOUNT_SNAPSHOT;
 			this.hasStatus = true;

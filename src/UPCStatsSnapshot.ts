@@ -11,9 +11,9 @@ namespace net.user1.orbiter.snapshot
 		private lastQueueWaitTime:number = 0;
 		private longestUPCProcesses?:UPCProcessingRecord[];
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 
 			this.method = UPC.GET_UPC_STATS_SNAPSHOT;
 			this.hasStatus = true;

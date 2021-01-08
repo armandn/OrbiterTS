@@ -7,9 +7,9 @@ namespace net.user1.orbiter
 	{
 		private attributes:{[scope:string]:{[name:string]:string|undefined}} = {};
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 		}
 
 		/**

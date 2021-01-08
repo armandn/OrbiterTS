@@ -221,8 +221,8 @@ var net;
             (function (snapshot) {
                 var Snapshot = (function (_super) {
                     __extends(Snapshot, _super);
-                    function Snapshot() {
-                        var _this = _super.call(this) || this;
+                    function Snapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.args = [];
                         return _this;
                     }
@@ -263,8 +263,8 @@ var net;
             (function (snapshot) {
                 var AccountListSnapshot = (function (_super) {
                     __extends(AccountListSnapshot, _super);
-                    function AccountListSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function AccountListSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.accountList = null;
                         _this.method = orbiter.UPC.GET_ACCOUNTLIST_SNAPSHOT;
                         return _this;
@@ -1018,8 +1018,8 @@ var net;
         (function (orbiter) {
             var AttributeCollection = (function (_super) {
                 __extends(AttributeCollection, _super);
-                function AttributeCollection() {
-                    var _this = _super.call(this) || this;
+                function AttributeCollection(target) {
+                    var _this = _super.call(this, target) || this;
                     _this.attributes = {};
                     return _this;
                 }
@@ -1400,8 +1400,8 @@ var net;
             (function (snapshot) {
                 var BannedListSnapshot = (function (_super) {
                     __extends(BannedListSnapshot, _super);
-                    function BannedListSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function BannedListSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.method = orbiter.UPC.GET_BANNED_LIST_SNAPSHOT;
                         return _this;
                     }
@@ -1929,8 +1929,8 @@ var net;
             (function (snapshot) {
                 var ClientCountSnapshot = (function (_super) {
                     __extends(ClientCountSnapshot, _super);
-                    function ClientCountSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function ClientCountSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.count = 0;
                         _this.method = orbiter.UPC.GET_CLIENTCOUNT_SNAPSHOT;
                         _this.hasStatus = true;
@@ -2020,8 +2020,8 @@ var net;
             (function (snapshot) {
                 var ClientListSnapshot = (function (_super) {
                     __extends(ClientListSnapshot, _super);
-                    function ClientListSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function ClientListSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.method = orbiter.UPC.GET_CLIENTLIST_SNAPSHOT;
                         return _this;
                     }
@@ -5661,8 +5661,8 @@ var net;
             (function (snapshot) {
                 var GatewaysSnapshot = (function (_super) {
                     __extends(GatewaysSnapshot, _super);
-                    function GatewaysSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function GatewaysSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.method = orbiter.UPC.GET_GATEWAYS_SNAPSHOT;
                         return _this;
                     }
@@ -6893,8 +6893,8 @@ var net;
             (function (snapshot) {
                 var NodeListSnapshot = (function (_super) {
                     __extends(NodeListSnapshot, _super);
-                    function NodeListSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function NodeListSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.method = orbiter.UPC.GET_NODELIST_SNAPSHOT;
                         return _this;
                     }
@@ -8560,8 +8560,8 @@ var net;
         (function (orbiter) {
             var RoomList = (function (_super) {
                 __extends(RoomList, _super);
-                function RoomList() {
-                    var _this = _super.call(this) || this;
+                function RoomList(target) {
+                    var _this = _super.call(this, target) || this;
                     _this.rooms = [];
                     return _this;
                 }
@@ -9850,8 +9850,8 @@ var net;
             (function (snapshot) {
                 var ServerModuleListSnapshot = (function (_super) {
                     __extends(ServerModuleListSnapshot, _super);
-                    function ServerModuleListSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function ServerModuleListSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.method = orbiter.UPC.GET_SERVERMODULELIST_SNAPSHOT;
                         return _this;
                     }
@@ -10400,8 +10400,8 @@ var net;
             (function (snapshot) {
                 var UPCStatsSnapshot = (function (_super) {
                     __extends(UPCStatsSnapshot, _super);
-                    function UPCStatsSnapshot() {
-                        var _this = _super.call(this) || this;
+                    function UPCStatsSnapshot(target) {
+                        var _this = _super.call(this, target) || this;
                         _this.totalUPCsProcessed = 0;
                         _this.numUPCsInQueue = 0;
                         _this.lastQueueWaitTime = 0;

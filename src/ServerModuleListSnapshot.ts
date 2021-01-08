@@ -16,9 +16,9 @@ namespace net.user1.orbiter.snapshot
 	{
 		private moduleList?:ModuleDefinition[];
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 			this.method = UPC.GET_SERVERMODULELIST_SNAPSHOT;
 		}
 

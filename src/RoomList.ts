@@ -8,9 +8,9 @@ namespace net.user1.orbiter
 	{
 		private readonly rooms:Room[] = [];
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 		}
 
 		add(room:Room):Room|null

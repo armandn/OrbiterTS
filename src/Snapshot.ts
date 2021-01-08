@@ -35,9 +35,9 @@ namespace net.user1.orbiter.snapshot
 		/** @internal */
 		statusReceived?:boolean;
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 		}
 
 		/**

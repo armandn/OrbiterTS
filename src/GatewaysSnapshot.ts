@@ -11,9 +11,9 @@ namespace net.user1.orbiter.snapshot
 	{
 		private gateways?:Gateway[];
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 			this.method = UPC.GET_GATEWAYS_SNAPSHOT;
 		}
 

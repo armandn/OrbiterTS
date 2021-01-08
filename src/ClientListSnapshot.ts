@@ -12,9 +12,9 @@ namespace net.user1.orbiter.snapshot
 	{
 		private clientList?:{clientID:string, userID:string|null}[];
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 			this.method = UPC.GET_CLIENTLIST_SNAPSHOT;
 		}
 

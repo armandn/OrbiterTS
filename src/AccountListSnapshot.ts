@@ -9,9 +9,9 @@ namespace net.user1.orbiter.snapshot
 	{
 		private accountList:string[]|null = null;
 
-		constructor()
+		constructor(target?:net.user1.events.EventDispatcher)
 		{
-			super();
+			super(target);
 			this.method = UPC.GET_ACCOUNTLIST_SNAPSHOT;
 		}
 
